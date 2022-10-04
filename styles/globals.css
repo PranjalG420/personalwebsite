@@ -1,3 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color: #18181b;
+}
+
 html,
 body {
   padding: 0;
@@ -13,6 +21,7 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: Kanit, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +30,6 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background: var(--background-color);
   }
 }
