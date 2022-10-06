@@ -1,15 +1,18 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import { GitHub, Linkedin, Twitter } from "react-feather";
+import Container from "../components/container";
 
 const Home: NextPage = () => {
     return (
-        <div className="flex flex-col mt-4 md:mt-16">
+        <Container>
             {/* Intro to me */}
 
-            <div className="flex flex-col-reverse md:flex-row items-start bg-zinc-800 p-5 md:p-10 rounded-xl">
+            <div className="flex flex-col-reverse md:flex-row items-start mt-2 md:p-4">
                 <div className="flex flex-col md:mr-10 min-h-[200px]">
-                    <p className="text-2xl md:text-5xl font-semibold mb-2">Pranjal Gupta</p>
+                    <p className="text-2xl md:text-5xl font-semibold mb-2">
+                        Pranjal Gupta
+                    </p>
                     <p className="text-base md:text-lg italic mb-2">
                         Aspiring Web Developer
                     </p>
@@ -31,52 +34,49 @@ const Home: NextPage = () => {
 
             {/* Socials */}
 
-            <div className="flex flex-col items-center bg-zinc-800 p-5 md:p-10 rounded-xl mt-8 md:mt-16">
-                <p className="text-2xl md:text-4xl font-semibold ">My Portfolio</p>
-                <p className="mt-4 text-base text-zinc-500">
+            <div className="flex flex-col items-center md:p-4 rounded-xl">
+                <p className="text-2xl my-4 md:text-4xl font-semibold ">
+                    My Portfolio
+                </p>
+                <p className="text-base text-zinc-500">
                     I post any updates on projects on my repository. Conenct
                     with me on LinkedIn! Follow my Twitter for my thoughts on
                     topics and any updates on future projects.
                 </p>
+
                 <div className="mt-4 md:mt-10 flex items-center md:flex-row justify-around min-w-full">
                     <a
                         href="https://github.com/pranjalG420"
                         target="_blank"
-                        className="bg-gradient-to-r from-blue-500 to-blue-800 p-[5px] mr-2 rounded-xl hover:text-zinc-600 transition-all"
+                        className="bg-gradient-to-r from-blue-500 to-blue-800 p-6 md:p-16 rounded-xl md:hover:translate-x-2 transition-all"
                     >
-                        <div className="bg-zinc-900 p-6 md:p-16 rounded-xl">
-                            <GitHub
-                                strokeWidth={2}
-                                size={300}
-                                className="md:w-14 md:h-14 w-6 h-6"
-                            />
-                        </div>
+                        <GitHub
+                            strokeWidth={2}
+                            size={300}
+                            className="md:w-14 md:h-14 w-6 h-6"
+                        />
                     </a>
                     <a
                         href="https://www.linkedin.com/in/pranjal-gupta-10a595224/"
                         target="_blank"
-                        className="bg-gradient-to-r from-blue-500 to-blue-800 p-[5px] mr-2 rounded-xl hover:text-zinc-600 transition-all"
+                        className="bg-gradient-to-r from-blue-500 to-blue-800 p-6 md:p-16 rounded-xl md:hover:translate-x-2 transition-all"
                     >
-                        <div className="bg-zinc-900 p-6 md:p-16 rounded-xl">
-                            <Linkedin
-                                strokeWidth={2}
-                                size={300}
-                                className="md:w-14 md:h-14 w-6 h-6"
-                            />
-                        </div>
+                        <Linkedin
+                            strokeWidth={2}
+                            size={300}
+                            className="md:w-14 md:h-14 w-6 h-6"
+                        />
                     </a>
                     <a
                         href="https://twitter.com/PranjalG420"
                         target="_blank"
-                        className="bg-gradient-to-r from-blue-500 to-blue-800 p-[5px] rounded-xl hover:text-zinc-600 transition-all"
+                        className="bg-gradient-to-r from-blue-500 to-blue-800 p-6 md:p-16 rounded-xl md:hover:translate-x-2 transition-all"
                     >
-                        <div className="bg-zinc-900 p-6 md:p-16 rounded-xl">
-                            <Twitter
-                                strokeWidth={2}
-                                size={300}
-                                className="md:w-14 md:h-14 w-6 h-6"
-                            />
-                        </div>
+                        <Twitter
+                            strokeWidth={2}
+                            size={300}
+                            className="md:w-14 md:h-14 w-6 h-6"
+                        />
                     </a>
                 </div>
             </div>
@@ -88,7 +88,7 @@ const Home: NextPage = () => {
                 <p>email</p>
                 <p></p>
             </div>
-        </div>
+        </Container>
     );
 };
 

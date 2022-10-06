@@ -12,13 +12,19 @@ module.exports = {
                 mono: ["Roboto Mono", "monospace"],
             },
             animation: {
-                navLoad: "navLoad 1s ease-in-out",
+                navLoad: "navLoad 1.5s ease-in-out",
+                buttonHover: "buttonHover 2s ease-in-out infinite ",
                 spin: "spin 20s linear infinite",
             },
             keyframes: {
                 navLoad: {
-                    "0%": { transform: "translateY(-100%)" },
+                    "0%": { transform: "translateX(200%)" },
                     "100%": { transform: "translateY(0%)" },
+                },
+                buttonHover: {
+                    "0%": { transform: "scale(1)" },
+                    "50%": { transform: "scale(1.05)" },
+                    "100%": { transform: "scale(1)" },
                 },
             },
         },
