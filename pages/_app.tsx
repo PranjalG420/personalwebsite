@@ -5,14 +5,9 @@ import Container from "../components/container";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <div className="min-h-screen flex flex-col items-center ">
-            <div className="md:max-w-[900px] mx-10">
-                <Navbar />
-                <div>
-                    <Container>
-                        <Component {...pageProps} />
-                    </Container>
-                </div>
+        <div className="min-h-screen flex flex-col items-center">
+            <div className="flex flex-col items-center tablet:max-w-[900px]">
+                <Component {...pageProps} />
             </div>
         </div>
     );

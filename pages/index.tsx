@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import { GitHub, Linkedin, Twitter } from "react-feather";
 import Container from "../components/container";
+import Indexcard from "../components/indexcard";
 
 const Home: NextPage = () => {
     return (
@@ -34,14 +35,14 @@ const Home: NextPage = () => {
 
             {/* Socials */}
 
-            <div className="flex flex-col items-center md:p-4 rounded-xl">
+            <Indexcard>
                 <p className="text-2xl my-4 md:text-4xl font-semibold ">
                     My Portfolio
                 </p>
                 <p className="text-base text-zinc-500">
                     I post any updates on projects on my repository. Conenct
-                    with me on LinkedIn! Follow my Twitter for my thoughts on
-                    topics and any updates on future projects.
+                    with me on LinkedIn! Follow my Twitter for any new thoughts
+                    on topics and any updates on future projects.
                 </p>
 
                 <div className="mt-4 md:mt-10 flex items-center md:flex-row justify-around min-w-full">
@@ -79,15 +80,15 @@ const Home: NextPage = () => {
                         />
                     </a>
                 </div>
-            </div>
+            </Indexcard>
 
             {/* Get in Touch */}
 
-            <div className="flex flex-col items-center bg-zinc-800 p-10 rounded-xl mt-16">
+            <Indexcard>
                 <p className="text-4xl font-semibold">Get in Touch</p>
                 <p>email</p>
                 <p></p>
-            </div>
+            </Indexcard>
         </Container>
     );
 };

@@ -8,7 +8,7 @@ export default function navbar() {
         setTheme(!theme);
     }
     return (
-        <div className="flex animate-navLoad justify-between z-20 min-h-[60px] sticky top-0 right-0 backdrop-blur left-0 items-center text-sm md:text-xl font-semibold">
+        <div className="flex tablet:min-w-[900px] min-w-full justify-between z-20 min-h-[60px] sticky top-0 right-0 left-0 backdrop-blur items-center text-sm md:text-xl font-semibold">
             <div className="flex justify-center">
                 <a
                     href="/"
