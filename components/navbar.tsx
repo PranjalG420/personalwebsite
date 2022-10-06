@@ -8,7 +8,7 @@ export default function navbar() {
         setTheme(!theme);
     }
     return (
-        <div className="flex tablet:min-w-[900px] min-w-full justify-between z-20 min-h-[60px] sticky top-0 right-0 left-0 backdrop-blur items-center text-sm md:text-xl font-semibold">
+        <div className="flex tablet:min-w-[900px] min-w-full justify-between z-20 min-h-[60px] sticky top-0 right-0 left-0 backdrop-blur items-center text-sm tablet:text-xl font-semibold">
             <div className="flex justify-center">
                 <a
                     href="/"
@@ -31,13 +31,13 @@ export default function navbar() {
                     <Sun
                         strokeWidth={2}
                         size={300}
-                        className="md:w-8 md:h-8 w-4 h-4"
+                        className="tablet:w-8 tablet:h-8 w-4 h-4"
                     />
                 ) : (
                     <Moon
                         strokeWidth={2}
                         size={300}
-                        className="md:w-8 md:h-8 w-4 h-4"
+                        className="tablet:w-8 tablet:h-8 w-4 h-4"
                     />
                 )}
             </button>

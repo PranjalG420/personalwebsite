@@ -4,8 +4,8 @@ import Container from "../components/container";
 export default function register() {
     return (
         <Container>
-            <form className="flex flex-col items-center mt-16">
-                <label className="text-2xl md:text-5xl font-semibold">
+            <form className="flex flex-col items-center tablet:mt-24 mt-16">
+                <label className="text-2xl tablet:text-5xl font-semibold">
                     Register
                 </label>
 
