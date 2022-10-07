@@ -17,7 +17,7 @@ export default function navbar() {
                     Home
                 </a>
                 <a
-                    href="#"
+                    href="/guestbook"
                     className="px-4 py-2 rounded-lg hover:bg-zinc-800 transition-all"
                 >
                     Guestbook

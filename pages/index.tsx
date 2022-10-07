@@ -22,7 +22,7 @@ export function LinkBlock({ link, Icon }) {
         </a>
     );
 }
-//my-2
+
 export function PostBlock({ children, link }) {
     return (
         <div className="w-full mb-4 bg-gradient-to-r from-blue-500 to-blue-800 rounded-xl p-[5px] tablet:w-[275px]">
@@ -45,6 +45,7 @@ export function PostBlock({ children, link }) {
 }
 
 const Home: NextPage = () => {
+    const session = true;
     return (
         <Container>
             {/* Intro to me */}
@@ -84,7 +85,7 @@ const Home: NextPage = () => {
                     development world. I also write about my opinions on
                     different topics. I hope you enjoy reading my posts!
                 </p>
-                <div className="flex flex-grow flex-col tablet:flex-row items-start tablet:items-start justify-between mt-4 min-w-full">
+                <div className="flex flex-grow flex-col tablet:flex-row items-start mx-1 tablet:items-start justify-between mt-4 min-w-full">
                     <PostBlock link="/#">What is the MERN stack?</PostBlock>
                     <PostBlock link="/#">
                         What is the JAMstack and why is it so popular?
@@ -105,15 +106,28 @@ const Home: NextPage = () => {
                     comment, appreciation or some wisdom for me and other
                     people.
                 </p>
-                <div className="border-zinc-500 border-[5px] w-full mt-4 rounded-xl p-4">
+                <div className="border-zinc-500 w-full rounded-xl py-4">
+                    <p className="my-2 font-semibold text-xl items-start">
+                        The latest comment:
+                    </p>
+                    <div className="mb-4 bg-zinc-800 px-4 py-4 rounded-xl">
+                        <p className="tablet:text-lg text-base">
+                            Hey! Your website is so cool!
+                        </p>
+                        <div className="mx-2 mt-2 tablet:text-lg text-sm text-zinc-500 flex flex-row">
+                            <p>testUser</p>
+                            <p className="mx-4">/</p>
+                            <p>2021-08-01</p>
+                        </div>
+                    </div>
                     <p className="mb-2 font-semibold text-xl tablet:text-2xl">
                         Sign in to use the Guestbook.
                     </p>
-                    <p className="mb-6 text-sm tablet:text-lg">
+                    <p className="mb-6 text-base tablet:text-lg">
                         And leave a cool message for future viewers!
                     </p>
                     <a
-                        href="/"
+                        href="/signin"
                         className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-blue-800 text-lg tablet:text-xl mt-6 transition-all hover:ml-2"
                     >
                         Sign In
