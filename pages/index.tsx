@@ -16,6 +16,7 @@ export function LinkBlock({ link, Icon }) {
         <a
             href={link}
             target="_blank"
+            rel="noopener noreferrer"
             className="aspect-square flex items-center justify-around w-full bg-gradient-to-r from-blue-500 to-blue-800 p-4 md:p-12 tablet:p-16 rounded-xl tablet:hover:translate-x-2 transition-all"
         >
             <Icon strokeWidth={2} size={300} className="w-full h-full " />
@@ -120,21 +121,6 @@ const Home: NextPage = () => {
                             <p>2021-08-01</p>
                         </div>
                     </div>
-                    <p className="mb-2 font-semibold text-xl tablet:text-2xl">
-                        Sign in to use the Guestbook.
-                    </p>
-                    <p className="mb-6 text-base tablet:text-lg">
-                        And leave a cool message for future viewers!
-                    </p>
-                    <a
-                        href="/signin"
-                        className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-blue-800 text-lg tablet:text-xl mt-6 transition-all tablet:hover:ml-2"
-                    >
-                        Sign In
-                    </a>
-                    <p className="mt-6 italic text-base text-zinc-500">
-                        Only your name will be shown.
-                    </p>
                 </div>
             </Indexcard>
 
