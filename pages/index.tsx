@@ -5,7 +5,7 @@ import Container from "../components/container";
 
 export function Indexcard({ children }) {
     return (
-        <main className="flex flex-grow flex-col items-center tablet:p-4 rounded-xl mt-6 tablet:mt-0">
+        <main className="flex flex-grow flex-col items-center rounded-xl mt-6 tablet:mt-0">
             {children}
         </main>
     );
@@ -47,10 +47,10 @@ export function PostBlock({ children, link }) {
 const Home: NextPage = () => {
     const session = true;
     return (
-        <Container>
+        <Container top="flex-1">
             {/* Intro to me */}
 
-            <div className="flex flex-col-reverse tablet:flex-row items-start mt-2 tablet:p-4">
+            <div className="flex flex-col-reverse tablet:flex-row items-start mt-2">
                 <div className="flex flex-col tablet:mr-10 min-h-[200px]">
                     <p className="text-2xl tablet:text-5xl font-semibold mb-2">
                         Pranjal Gupta
@@ -128,7 +128,7 @@ const Home: NextPage = () => {
                     </p>
                     <a
                         href="/signin"
-                        className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-blue-800 text-lg tablet:text-xl mt-6 transition-all hover:ml-2"
+                        className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-blue-800 text-lg tablet:text-xl mt-6 transition-all tablet:hover:ml-2"
                     >
                         Sign In
                     </a>

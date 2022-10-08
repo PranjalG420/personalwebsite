@@ -21,7 +21,7 @@ export default function Footer() {
                 target=""
                 Icon={Mail}
             ></FooterIcon>
-            <FooterIcon Link="/sitemap" Icon={Tool} target=""></FooterIcon>
+            <FooterIcon Link="/tools" Icon={Tool} target=""></FooterIcon>
             <FooterIcon
                 Link="https://github.com/PranjalG420/personalwebsite"
                 target="_blank"

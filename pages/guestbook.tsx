@@ -3,8 +3,8 @@ import Container from "../components/container";
 
 export default function Guestbook() {
     return (
-        <Container>
-            <div className="flex flex-col items-start justify-start">
+        <Container top="flex-0">
+            <div className="flex items-start flex-col tablet:w-[900px]">
                 <p className="text-2xl mb-4 tablet:text-4xl font-semibold">
                     Guestbook
                 </p>

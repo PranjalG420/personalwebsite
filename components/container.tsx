@@ -1,10 +1,13 @@
 import React, { PropsWithChildren } from "react";
-import Footer from "./footer";
-import Navbar from "./navbar";
 
-export default function Container({ children }) {
+export default function Container({ children, top }) {
     return (
-        <main className="flex flex-1 flex-col justify-around items-center tablet:max-w-[900px] mx-10">
+        <main
+            className={
+                `flex flex-col justify-around items-start w-full px-4 tablet:max-w-[900px] tablet:mx-10 ` +
+                top
+            }
+        >
             {children}
         </main>
     );
