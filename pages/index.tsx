@@ -1,7 +1,9 @@
-import React, { PropsWithChildren } from "react";
-import type { NextPage } from "next";
+import React, { PropsWithChildren, useState } from "react";
+import type { GetServerSidePropsContext, NextPage } from "next";
 import { GitHub, Linkedin, Code, Twitter, Link } from "react-feather";
 import Container from "../components/container";
+import { PrismaClient } from "@prisma/client";
+import { format } from "date-fns";
 
 export function Indexcard({ children }) {
     return (
@@ -45,19 +47,19 @@ export function PostBlock({ children, link }) {
     );
 }
 
-const Home: NextPage = () => {
-    const session = true;
+export default function Home({ data: guestbook }) {
+    const [guestbookentry, setGuestbookentry] = useState("");
     return (
         <Container top="flex-1">
             {/* Intro to me */}
 
             <div className="flex flex-col-reverse tablet:flex-row items-start mt-2">
                 <div className="flex flex-col tablet:mr-10 min-h-[200px]">
-                    <p className="default-text">Pranjal Gupta</p>
+                    <p className="default-title">Pranjal Gupta</p>
                     <p className="text-base tablet:text-lg italic mb-2">
                         Aspiring Web Developer
                     </p>
-                    <p className="text-base text-zinc-500">
+                    <p className="default-text">
                         Hey! Thanks for checking out my website! I have a keen
                         interest in learning about everything related to web
                         develpment. I specialize in web and app development
@@ -76,9 +78,7 @@ const Home: NextPage = () => {
             {/* Posts */}
 
             <Indexcard>
-                <p className="text-2xl mb-4 tablet:text-4xl font-semibold">
-                    Posts
-                </p>
+                <p className="default-title">Posts</p>
                 <p className="text-base text-zinc-500">
                     I write about my experiences and what I learn in the
                     development world. I also write about my opinions on
@@ -96,28 +96,36 @@ const Home: NextPage = () => {
             {/* Guestbook */}
 
             <Indexcard>
-                <p className="text-2xl mb-4 tablet:text-4xl font-semibold">
-                    Guestbook
-                </p>
-                <p className="text-base text-zinc-500">
+                <p className="default-title">Guestbook</p>
+                <p className="default-text">
                     The Guestbook is a place where you can leave a message for
                     me. This could be anything, some feedback, a helpful
                     comment, appreciation or some wisdom for me and other
                     people.
                 </p>
                 <div className="border-zinc-500 w-full rounded-xl py-4">
-                    <p className="my-2 font-semibold text-xl items-start">
-                        The latest comment:
-                    </p>
-                    <div className="mb-4 bg-zinc-200 dark:bg-zinc-800 px-4 py-4 rounded-xl">
-                        <p className="tablet:text-lg text-base">
-                            Hey! Your website is so cool!
-                        </p>
-                        <div className="mx-2 mt-2 tablet:text-lg text-sm text-zinc-500 flex flex-row">
-                            <p>testUser</p>
-                            <p className="mx-4">/</p>
-                            <p>2021-08-01</p>
-                        </div>
+                    <p className="default-subtitle">The latest comment:</p>
+                    <div className="bg-zinc-200 dark:bg-zinc-800 rounded-xl mt-4">
+                        {JSON.parse(guestbook).map((entry) => (
+                            <div
+                                key={entry.id}
+                                className="flex items-start flex-col tablet:w-[900px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl"
+                            >
+                                <p className="default-subtitle">
+                                    {entry.guestbookentry}
+                                </p>
+                                <div className="flex flex-row items-center default-text">
+                                    <p>{entry.name}</p>
+                                    <p className="mx-2">{"/"}</p>
+                                    <span>
+                                        {format(
+                                            new Date(entry.date),
+                                            "dd MMMM yyyy"
+                                        )}
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </Indexcard>
@@ -125,10 +133,8 @@ const Home: NextPage = () => {
             {/* Links */}
 
             <Indexcard>
-                <p className="text-2xl mb-4 tablet:text-4xl font-semibold">
-                    Links
-                </p>
-                <p className="text-base text-zinc-500">
+                <p className="default-title">Links</p>
+                <p className="default-text">
                     I post any updates on projects on my repository. Conenct
                     with me on LinkedIn! Check out my Leetcode account to see
                     what programs I've solved! Follow me on Twitter to see what
@@ -157,6 +163,17 @@ const Home: NextPage = () => {
             {/* Get in Touch */}
         </Container>
     );
-};
+}
 
-export default Home;
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+    const prisma = new PrismaClient();
+    const guestbook = await prisma.guestbook.findMany({
+        orderBy: {
+            id: "desc",
+        },
+        take: 1,
+    });
+    return {
+        props: { data: JSON.stringify(guestbook) },
+    };
+}

@@ -20,10 +20,17 @@ a {
   font-family: Kanit, sans-serif;
 }
 
-.default-text {
-  @apply text-2xl tablet:text-5xl font-semibold mb-2;
+.default-title {
+  @apply text-2xl tablet:text-4xl font-semibold mb-2;
 }
 
+.default-text {
+  @apply text-base dark:text-zinc-500 text-zinc-700;
+}
+
+.default-subtitle {
+  @apply font-semibold text-xl tablet:text-2xl
+}
 
 @media (prefers-color-scheme: dark) {
   html {

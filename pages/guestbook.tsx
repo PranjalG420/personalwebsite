@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { GetServerSidePropsContext } from "next";
 import { PrismaClient } from "@prisma/client";
 import { format } from "date-fns";
-import { Indexcard } from ".";
+import { Button } from "../components/smallcomponents";
 
 export default function Guestbook({ data: guestbook }) {
     const { data: session } = useSession();
@@ -32,14 +32,9 @@ export default function Guestbook({ data: guestbook }) {
 
     return (
         <Container top="flex-0">
-            <p className="text-2xl mb-4 tablet:text-4xl font-semibold">
-                Guestbook
-            </p>
-            <Indexcard>
-                <p>joe</p>
-            </Indexcard>
+            <p className="default-title">Guestbook</p>
             {(session && (
-                <div className="flex items-start flex-col tablet:w-[900px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl">
+                <div className="flex items-start flex-col tablet:w-[900px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl mb-2">
                     <p className="text-lg tablet:text-xl font-semibold">
                         Leave a cool and inspirational message for future
                         viewers!
@@ -61,24 +56,19 @@ export default function Guestbook({ data: guestbook }) {
                             Submit
                         </button>
                     </form>
-                    <p className="italic text-base text-zinc-500">
+                    <p className="italic default-text">
                         Only your name will be shown.
                     </p>
                 </div>
             )) || (
-                <div className="flex items-start flex-col tablet:w-[900px] bg-zinc-800 p-4 rounded-xl">
-                    <p className="font-semibold text-xl tablet:text-2xl">
+                <div className="flex items-start flex-col tablet:w-[900px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl mb-2">
+                    <p className="default-subtitle">
                         Sign in to use the Guestbook.
                     </p>
                     <p className="my-2 text-base tablet:text-lg">
                         And leave a cool message for future viewers!
                     </p>
-                    <button
-                        onClick={() => signIn()}
-                        className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-blue-800 text-lg tablet:text-xl transition-all tablet:hover:ml-2"
-                    >
-                        Sign In
-                    </button>
+                    <Button button_function={() => signIn()}>Sign in</Button>
                     <p className="mt-2 italic text-base text-zinc-500">
                         Only your name will be shown.
                     </p>
@@ -87,15 +77,16 @@ export default function Guestbook({ data: guestbook }) {
             {JSON.parse(guestbook).map((entry) => (
                 <div
                     key={entry.id}
-                    className="flex items-start flex-col tablet:w-[900px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl mt-4"
+                    className="flex items-start flex-col tablet:w-[900px] p-4 rounded-xl"
                 >
-                    <p className="text-lg tablet:text-xl font-semibold">
-                        {entry.name}
-                    </p>
-                    <p className="text-base tablet:text-lg">
-                        {entry.guestbookentry}
-                    </p>
-                    <span>{format(new Date(entry.date), "dd MMMM yyyy")}</span>
+                    <p className="default-subtitle">{entry.guestbookentry}</p>
+                    <div className="flex flex-row items-center default-text">
+                        <p>{entry.name}</p>
+                        <p className="mx-2">{"/"}</p>
+                        <span>
+                            {format(new Date(entry.date), "dd MMMM yyyy")}
+                        </span>
+                    </div>
                 </div>
             ))}
         </Container>
@@ -108,7 +99,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
         orderBy: {
             id: "desc",
         },
-        // take: 1,
     });
     return {
         props: { data: JSON.stringify(guestbook) },
