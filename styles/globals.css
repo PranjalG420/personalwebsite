@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --background-color: #18181b;
-} */
-
 html,
 body {
   padding: 0;
@@ -23,6 +19,11 @@ a {
   box-sizing: border-box;
   font-family: Kanit, sans-serif;
 }
+
+.default-text {
+  @apply text-2xl tablet:text-5xl font-semibold mb-2;
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {

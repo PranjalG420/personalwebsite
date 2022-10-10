@@ -17,7 +17,7 @@ export function LinkBlock({ link, Icon }) {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="aspect-square flex items-center justify-around w-full bg-gradient-to-r from-blue-500 to-blue-800 p-4 md:p-12 tablet:p-16 rounded-xl tablet:hover:translate-x-2 transition-all"
+            className="text-white aspect-square flex items-center justify-around w-full bg-gradient-to-r from-blue-500 to-blue-800 p-4 md:p-12 tablet:p-16 rounded-xl tablet:hover:translate-x-2 transition-all"
         >
             <Icon strokeWidth={2} size={300} className="w-full h-full " />
         </a>
@@ -27,7 +27,7 @@ export function LinkBlock({ link, Icon }) {
 export function PostBlock({ children, link }) {
     return (
         <div className="w-full mb-4 bg-gradient-to-r from-blue-500 to-blue-800 rounded-xl p-[5px] tablet:w-[275px]">
-            <div className="flex flex-col bg-zinc-900 rounded-xl text-base px-4 py-2 tablet:h-[150px] font-semibold justify-between">
+            <div className="flex flex-col bg-white dark:bg-zinc-900 rounded-xl text-base px-4 py-2 tablet:h-[150px] font-semibold justify-between">
                 <p>{children}</p>
                 <a
                     href="/#"
@@ -53,9 +53,7 @@ const Home: NextPage = () => {
 
             <div className="flex flex-col-reverse tablet:flex-row items-start mt-2">
                 <div className="flex flex-col tablet:mr-10 min-h-[200px]">
-                    <p className="text-2xl tablet:text-5xl font-semibold mb-2">
-                        Pranjal Gupta
-                    </p>
+                    <p className="default-text">Pranjal Gupta</p>
                     <p className="text-base tablet:text-lg italic mb-2">
                         Aspiring Web Developer
                     </p>
@@ -111,7 +109,7 @@ const Home: NextPage = () => {
                     <p className="my-2 font-semibold text-xl items-start">
                         The latest comment:
                     </p>
-                    <div className="mb-4 bg-zinc-800 px-4 py-4 rounded-xl">
+                    <div className="mb-4 bg-zinc-200 dark:bg-zinc-800 px-4 py-4 rounded-xl">
                         <p className="tablet:text-lg text-base">
                             Hey! Your website is so cool!
                         </p>

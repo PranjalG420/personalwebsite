@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import Container from "../components/container";
 import { useSession, signIn } from "next-auth/react";
 import { useRouter } from "next/router";
-import { Prisma, PrismaClient } from "@prisma/client";
+import { GetServerSidePropsContext } from "next";
+import { PrismaClient } from "@prisma/client";
+import { format } from "date-fns";
+import { Indexcard } from ".";
 
-export default function Guestbook() {
+export default function Guestbook({ data: guestbook }) {
     const { data: session } = useSession();
     const [guestbookentry, setGuestbookentry] = useState("");
     const router = useRouter();
-
     const handleSend = async () => {
-        console.log(session.user.name);
         try {
             console.log("Success");
             await fetch("/api/guestbook", {
@@ -34,10 +35,14 @@ export default function Guestbook() {
             <p className="text-2xl mb-4 tablet:text-4xl font-semibold">
                 Guestbook
             </p>
+            <Indexcard>
+                <p>joe</p>
+            </Indexcard>
             {(session && (
-                <div className="flex items-start flex-col tablet:w-[900px] bg-zinc-800 p-4 rounded-xl">
+                <div className="flex items-start flex-col tablet:w-[900px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl">
                     <p className="text-lg tablet:text-xl font-semibold">
-                        Leave a cool message for future viewers!
+                        Leave a cool and inspirational message for future
+                        viewers!
                     </p>
                     <form onSubmit={handleSend}>
                         <textarea
@@ -79,17 +84,33 @@ export default function Guestbook() {
                     </p>
                 </div>
             )}
+            {JSON.parse(guestbook).map((entry) => (
+                <div
+                    key={entry.id}
+                    className="flex items-start flex-col tablet:w-[900px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl mt-4"
+                >
+                    <p className="text-lg tablet:text-xl font-semibold">
+                        {entry.name}
+                    </p>
+                    <p className="text-base tablet:text-lg">
+                        {entry.guestbookentry}
+                    </p>
+                    <span>{format(new Date(entry.date), "dd MMMM yyyy")}</span>
+                </div>
+            ))}
         </Container>
     );
 }
 
-// export async function getStaticProps() {
-//     const prisma = new PrismaClient();
-//     const entries = await prisma.guestbookentry.findMany({
-//         orderBy: {
-//             createdAt: "desc",
-//         },
-//     });
-// }
-
-// const;
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+    const prisma = new PrismaClient();
+    const guestbook = await prisma.guestbook.findMany({
+        orderBy: {
+            id: "desc",
+        },
+        // take: 1,
+    });
+    return {
+        props: { data: JSON.stringify(guestbook) },
+    };
+}
