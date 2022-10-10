@@ -7,9 +7,9 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model User {
+model Guestbook {
   id             Int       @id @default(autoincrement())
   name           String?   @db.VarChar(255)
   date           DateTime? @default(now())
-  guestbookentry String    @db.VarChar(255)
+  guestbookentry String    @db.VarChar(100)
 }

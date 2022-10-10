@@ -8,4 +8,12 @@ export default NextAuth({
             clientSecret: process.env.GITHUB_SECRET,
         }),
     ],
+    pages: {
+        signIn: "/signin",
+    },
+    callbacks: {
+        async redirect({ url, baseUrl }) {
+            return baseUrl;
+        },
+    },
 });

@@ -1,36 +1,22 @@
 import React from "react";
 import Container from "../components/container";
+import { getProviders, signIn } from "next-auth/react";
 
-export default function signin() {
+export default function signin({ providers }) {
     return (
         <Container top="flex-1">
-            <form className="flex flex-col items-center">
-                <label className="text-2xl tablet:text-5xl font-semibold">
-                    Sign In
-                </label>
-                <input
-                    type="text"
-                    placeholder="Username"
-                    className="p-2 tablet:text-xl rounded-xl mt-6"
-                ></input>
-                <input
-                    type="text"
-                    placeholder="Password"
-                    className="p-2 tablet:text-xl rounded-xl mt-6"
-                ></input>
-                <button
-                    type="submit"
-                    className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-blue-800 text-lg tablet:text-2xl mt-6 transition-all tablet:hover:ml-2"
-                >
-                    Sign In
+            <div key="GitHub">
+                <button onClick={() => signIn("github")} className="">
+                    Sign in with GitHub
                 </button>
-                <label className="tablet:text-xl italic text-zinc-500 mt-6">
-                    New to my site? Register{" "}
-                    <a href="/register" className="text-blue-600 underline">
-                        here
-                    </a>
-                </label>
-            </form>
+            </div>
         </Container>
     );
+}
+
+export async function getServerSideProps(context) {
+    const providers = await getProviders();
+    return {
+        props: { providers },
+    };
 }

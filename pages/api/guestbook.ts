@@ -7,11 +7,13 @@ export default async function handler(
 ) {
     if (req.method == "POST") {
         const prisma = new PrismaClient();
-        await prisma.user.create({
+        await prisma.guestbook.create({
             data: {
                 guestbookentry: req.body.guestbookentry,
+                name: req.body.name,
             },
         });
+        res.end();
     } else {
         return res.status(401).json({ error: "Method not allowed" });
     }

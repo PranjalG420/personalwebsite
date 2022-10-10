@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import Container from "../components/container";
 import { useSession, signIn } from "next-auth/react";
 import { useRouter } from "next/router";
+import { Prisma, PrismaClient } from "@prisma/client";
 
 export default function Guestbook() {
+    const { data: session } = useSession();
     const [guestbookentry, setGuestbookentry] = useState("");
     const router = useRouter();
 
     const handleSend = async () => {
+        console.log(session.user.name);
         try {
             console.log("Success");
             await fetch("/api/guestbook", {
@@ -26,7 +29,6 @@ export default function Guestbook() {
         }
     };
 
-    const { data: session } = useSession();
     return (
         <Container top="flex-0">
             <p className="text-2xl mb-4 tablet:text-4xl font-semibold">
@@ -80,3 +82,14 @@ export default function Guestbook() {
         </Container>
     );
 }
+
+// export async function getStaticProps() {
+//     const prisma = new PrismaClient();
+//     const entries = await prisma.guestbookentry.findMany({
+//         orderBy: {
+//             createdAt: "desc",
+//         },
+//     });
+// }
+
+// const;
