@@ -12,7 +12,6 @@ export default function MyApp({
     return (
         <SessionProvider session={session}>
             <Head>
-                {/*favicon*/}
                 <link rel="icon" href="/Logo.png" />
             </Head>
             <ThemeProvider attribute="class">

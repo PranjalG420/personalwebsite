@@ -6,6 +6,7 @@ import { GetServerSidePropsContext } from "next";
 import { PrismaClient } from "@prisma/client";
 import { format } from "date-fns";
 import { Button } from "../components/smallcomponents";
+import Head from "next/head";
 
 export default function Guestbook({ data: guestbook }) {
     const { data: session } = useSession();
@@ -32,7 +33,9 @@ export default function Guestbook({ data: guestbook }) {
 
     return (
         <Container top="flex-0">
-            <title>Guestbook</title>
+            <Head>
+                <title>Pranjal Gupta</title>
+            </Head>
             <p className="default-title">Guestbook</p>
             {(session && (
                 <div className="flex items-start flex-col tablet:w-[900px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl mb-2">

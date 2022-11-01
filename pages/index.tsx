@@ -4,6 +4,7 @@ import { GitHub, Linkedin, Code, Twitter, Link } from "react-feather";
 import Container from "../components/container";
 import { PrismaClient } from "@prisma/client";
 import { format } from "date-fns";
+import Head from "next/head";
 
 export function Indexcard({ children }) {
     return (
@@ -51,7 +52,9 @@ export default function Home({ data: guestbook }) {
     const [guestbookentry, setGuestbookentry] = useState("");
     return (
         <Container top="flex-1">
-            <title>Pranjal Gupta</title>
+            <Head>
+                <title>Pranjal Gupta</title>
+            </Head>
             {/* Intro to me */}
 
             <div className="flex flex-col-reverse tablet:flex-row items-start mt-2">

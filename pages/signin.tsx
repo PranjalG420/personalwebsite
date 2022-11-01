@@ -2,11 +2,14 @@ import React from "react";
 import Container from "../components/container";
 import { getProviders, signIn } from "next-auth/react";
 import { Button } from "../components/smallcomponents";
+import Head from "next/head";
 
 export default function signin() {
     return (
         <Container top="flex-1">
-            <title>Sign In</title>
+            <Head>
+                <title>Sign In</title>
+            </Head>
             <div key="GitHub" className="flex flex-col items-center">
                 <p className="text-2xl mb-4 tablet:text-4xl font-semibold">
                     Sign in with GitHub

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import Container from "../components/container";
 
@@ -6,7 +7,9 @@ export default function errorPage() {
         // <div className="flex flex-col items-center justify-around h-full mt-5">
 
         <Container top="flex-1">
-            <title>Error</title>
+            <Head>
+                <title>Error</title>
+            </Head>
             <div className="flex flex-col items-center justify-around">
                 <p className="text-3xl tablet:text-5xl font-semibold">
                     404 Not Found
