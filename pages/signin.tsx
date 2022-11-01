@@ -6,6 +6,7 @@ import { Button } from "../components/smallcomponents";
 export default function signin() {
     return (
         <Container top="flex-1">
+            <title>Sign In</title>
             <div key="GitHub" className="flex flex-col items-center">
                 <p className="text-2xl mb-4 tablet:text-4xl font-semibold">
                     Sign in with GitHub

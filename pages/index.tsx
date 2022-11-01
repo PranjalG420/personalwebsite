@@ -33,7 +33,7 @@ export function PostBlock({ children, link }) {
                 <p>{children}</p>
                 <a
                     href="/#"
-                    className="flex flex-row items-center text-zinc-500 tablet:hover:text-white tablet:hover:underline transition-all"
+                    className="flex flex-row items-center text-zinc-500 tablet:hover:text-black dark:tablet:hover:text-white tablet:hover:underline transition-all"
                 >
                     Read More{" "}
                     <Link
@@ -51,6 +51,7 @@ export default function Home({ data: guestbook }) {
     const [guestbookentry, setGuestbookentry] = useState("");
     return (
         <Container top="flex-1">
+            <title>Pranjal Gupta</title>
             {/* Intro to me */}
 
             <div className="flex flex-col-reverse tablet:flex-row items-start mt-2">
