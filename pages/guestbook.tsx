@@ -34,7 +34,7 @@ export default function Guestbook({ data: guestbook }) {
     return (
         <Container top="flex-0">
             <Head>
-                <title>Pranjal Gupta</title>
+                <title>Guestbook</title>
             </Head>
             <p className="default-title">Guestbook</p>
             {(session && (
@@ -81,7 +81,7 @@ export default function Guestbook({ data: guestbook }) {
             {JSON.parse(guestbook).map((entry) => (
                 <div
                     key={entry.id}
-                    className="flex items-start flex-col tablet:w-[900px] p-4 rounded-xl"
+                    className="flex items-start flex-col tablet:w-[900px] p-2 rounded-xl"
                 >
                     <p className="default-subtitle">{entry.guestbookentry}</p>
                     <div className="flex flex-row items-center default-text">

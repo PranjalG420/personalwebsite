@@ -21,15 +21,23 @@ a {
 }
 
 pre {
-    @apply p-10 bg-slate-700;
+    @apply p-2 my-4 border-zinc-400 border-2 rounded-xl;
 }
 
-.prose img[title="klass"] {
-    @apply rounded-md;
+.prose img[title="blog-image"] {
+    @apply rounded-md block mx-auto w-[50%] my-4;
+}
+
+.prose p {
+    @apply tablet:text-base text-sm dark:text-zinc-300 text-zinc-900 font-semibold;
 }
 
 h3 {
-    @apply tablet:text-4xl font-semibold text-2xl my-4;
+    @apply tablet:text-4xl font-semibold text-2xl my-2;
+}
+
+h4 {
+    @apply tablet:text-2xl font-semibold text-xl my-2;
 }
 
 .default-title {
