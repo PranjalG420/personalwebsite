@@ -12,7 +12,7 @@ export default function MyApp({
     return (
         <SessionProvider session={session}>
             <Head>
-                <link rel="icon" href="/Logo.png" />
+                <link rel="icon" href="/pglogo.png" />
             </Head>
             <ThemeProvider attribute="class">
                 <div className="min-h-screen flex flex-col items-center text-black dark:text-white dark:bg-zinc-900 ">

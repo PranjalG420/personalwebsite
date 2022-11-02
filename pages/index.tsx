@@ -33,7 +33,7 @@ export function PostBlock({ children, link }) {
             <div className="flex flex-col bg-white dark:bg-zinc-900 rounded-xl text-base px-4 py-2 tablet:h-[150px] font-semibold justify-between">
                 <p>{children}</p>
                 <a
-                    href="/#"
+                    href={link}
                     className="flex flex-row items-center text-zinc-500 tablet:hover:text-black dark:tablet:hover:text-white tablet:hover:underline transition-all"
                 >
                     Read More{" "}
@@ -89,8 +89,10 @@ export default function Home({ data: guestbook }) {
                     different topics. I hope you enjoy reading my posts!
                 </p>
                 <div className="flex flex-grow flex-col tablet:flex-row items-start mx-1 tablet:items-start justify-between mt-4 min-w-full">
-                    <PostBlock link="/#">What is the MERN stack?</PostBlock>
-                    <PostBlock link="/#">
+                    <PostBlock link="/posts/react">
+                        What is the MERN stack?
+                    </PostBlock>
+                    <PostBlock link="/posts/helloworld">
                         What is the JAMstack and why is it so popular?
                     </PostBlock>
                     <PostBlock link="/#">Why is Rust so popular?</PostBlock>

@@ -20,6 +20,14 @@ a {
     font-family: Kanit, sans-serif;
 }
 
+pre {
+    @apply p-10 bg-slate-700;
+}
+
+.prose img[title="klass"] {
+    @apply rounded-md;
+}
+
 h3 {
     @apply tablet:text-4xl font-semibold text-2xl my-4;
 }
