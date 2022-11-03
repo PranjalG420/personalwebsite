@@ -4,13 +4,11 @@ import Container from "../components/container";
 
 export default function errorPage() {
     return (
-        // <div className="flex flex-col items-center justify-around h-full mt-5">
-
         <Container top="flex-1">
             <Head>
                 <title>Error</title>
             </Head>
-            <div className="flex flex-col items-center justify-around">
+            <div className="flex flex-col items-center justify-around mx-auto">
                 <p className="text-3xl tablet:text-5xl font-semibold">
                     404 Not Found
                 </p>
