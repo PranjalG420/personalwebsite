@@ -94,7 +94,7 @@ export default function Tools() {
             </ToolBlock>
             <TitleBlock>Designing</TitleBlock>
             <ToolBlock
-                link="figma.com"
+                link="https://www.figma.com/"
                 text="My Figma profile is on the footer"
             >
                 Figma
