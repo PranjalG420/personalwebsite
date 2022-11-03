@@ -10,7 +10,7 @@ export default function signin() {
             <Head>
                 <title>Sign In</title>
             </Head>
-            <div key="GitHub" className="flex flex-col items-center">
+            <div key="GitHub" className="flex flex-col items-center mx-auto">
                 <p className="text-2xl mb-4 tablet:text-4xl font-semibold">
                     Sign in with GitHub
                 </p>

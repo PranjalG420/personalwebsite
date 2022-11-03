@@ -89,7 +89,7 @@ export default function Home({ data: guestbook }) {
                     different topics. I hope you enjoy reading my posts!
                 </p>
                 <div className="flex flex-grow flex-col tablet:flex-row items-start mx-1 tablet:items-start justify-between mt-4 min-w-full">
-                    <PostBlock link="/posts/react">
+                    <PostBlock link="/posts/what-is-the-mern-stack">
                         What is the MERN stack?
                     </PostBlock>
                     <PostBlock link="/posts/helloworld">

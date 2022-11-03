@@ -21,7 +21,7 @@ a {
 }
 
 pre {
-    @apply p-2 my-4 border-zinc-400 border-2 rounded-xl;
+    @apply p-4 my-4 border-2 border-blue-500 tablet:text-base text-sm rounded;
 }
 
 .prose img[title="blog-image"] {

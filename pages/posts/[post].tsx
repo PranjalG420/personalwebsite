@@ -35,7 +35,7 @@ export default function Post({ post, morePosts, preview }: Props) {
         <>
             <Container top="flex-0">
                 <Head>
-                    <title>{post.title || "blogpost"}</title>
+                    <title>{post.title || "Title Not Provided"}</title>
                 </Head>
                 <div className="flex flex-row items-center">
                     <img
@@ -44,8 +44,8 @@ export default function Post({ post, morePosts, preview }: Props) {
                         className="rounded-[50%] max-h-[30px] mr-2"
                     />
                     <p className="default-text italic">
-                        {post.author || "author not found"} /{"  "}
-                        {post.date || "date not found"}
+                        {post.author || "Author Not Found"} /{"  "}
+                        {post.date || "Date Not Found"}
                     </p>
                 </div>
                 <div className="prose max-w-full mx-auto mb-4">
