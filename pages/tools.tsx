@@ -54,20 +54,29 @@ export default function Tools() {
                 <title>Tools</title>
             </Head>
             <p className="default-title">Tools Used</p>
-            <TitleBlock>General</TitleBlock>
-            <ToolBlock link="https://code.visualstudio.com/" text="My IDE">
+            <TitleBlock>Editing</TitleBlock>
+            <ToolBlock
+                link="https://code.visualstudio.com/"
+                text="Extensions..."
+            >
                 Visual Studio Code
             </ToolBlock>
-            <TitleBlock>Portfolio Site</TitleBlock>
+            <ToolBlock
+                link="https://www.jetbrains.com/clion/"
+                text="I need another IDE..."
+            >
+                CLion
+            </ToolBlock>
+            <TitleBlock>Development</TitleBlock>
             <ToolBlock
                 link="https://nextjs.org/"
-                text="Awesome framework for React"
+                text="Awesome framework for web apps"
             >
                 NextJs
             </ToolBlock>
             <ToolBlock
                 link="https://www.typescriptlang.org/"
-                text="Better than Javscript"
+                text="Javscript but better"
             >
                 Typescript
             </ToolBlock>
@@ -77,7 +86,22 @@ export default function Tools() {
             <ToolBlock link="https://tailwindcss.com/" text="Long classnames">
                 Tailwind CSS
             </ToolBlock>
-            {/* Supabase, Prisma, Figma, markdowntoHTML, dangerouslyHTML,  */}
+            <ToolBlock link="https://supabase.com/" text="PostgreSQL Database">
+                Supabase
+            </ToolBlock>
+            <ToolBlock link="https://www.prisma.io/" text="Database ORM">
+                Prisma
+            </ToolBlock>
+            <TitleBlock>Designing</TitleBlock>
+            <ToolBlock
+                link="figma.com"
+                text="My Figma profile is on the footer"
+            >
+                Figma
+            </ToolBlock>
+            <ToolBlock link="https://www.getpaint.net/" text="It's like paint">
+                paint.net
+            </ToolBlock>
             {/* <img src="/logo.svg" /> */}
         </Container>
     );
