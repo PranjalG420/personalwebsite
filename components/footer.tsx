@@ -6,6 +6,7 @@ export function FooterIcon({ Icon, Link, target }) {
         <a
             href={Link}
             target={target}
+            rel="noopener noreferrer"
             className="text-zinc-600 hover:text-zinc-500 transition-all mx-4"
         >
             <Icon

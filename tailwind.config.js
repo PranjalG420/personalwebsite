@@ -14,6 +14,9 @@ module.exports = {
             lg: "1024px",
         },
         extend: {
+            backgroundImage: {
+                "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+            },
             fontFamily: {
                 sans: ["Kanit", "sans-serif"],
                 serif: ["Roboto Condensed", "serif"],

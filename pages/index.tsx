@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import type { GetServerSidePropsContext, NextPage } from "next";
 import { GitHub, Linkedin, Code, Twitter, Link } from "react-feather";
 import Container from "../components/container";
@@ -24,6 +24,39 @@ export function LinkBlock({ link, Icon }) {
         >
             <Icon strokeWidth={2} size={300} className="w-full h-full " />
         </a>
+
+        // background: radial-gradient(
+        //     800px circle at 100px 100px,
+        //     rgba(255, 255, 255, 0.06),
+        //     transparent 40%
+        // );
+
+        // <div
+        //     className="card"
+        //     style={{
+        //         background:
+        //             `radial-gradient(600px circle at ` +
+        //             cordx +
+        //             ` ` +
+        //             cordy +
+        //             `, rgba(255, 255, 255, 0.06), transparent 40%)`,
+        //     }}
+        // >
+        //     <span
+        //         onMouseMove={functions}
+        //         style={{
+        //             background:
+        //                 `radial-gradient(800px circle at ` +
+        //                 cordx +
+        //                 ` ` +
+        //                 cordy +
+        //                 `, rgba(255, 255, 255, 0.06), transparent 40%)`,
+        //         }}
+        //     ></span>
+        //     {/* {cordx}
+        //     {cordy} */}
+        //     {/* <span className="content-none h-[100%] left-0 top-0 w-[100%] absolute border-inherit z-20 bg-"></span> */}
+        // </div>
     );
 }
 
@@ -49,14 +82,40 @@ export function PostBlock({ children, link }) {
 }
 
 export default function Home({ data: guestbook }) {
+    // const [coords, setCoords] = useState({ x: 0, y: 0 });
+
+    // const [globalCoords, setGlobalCoords] = useState({ x: 0, y: 0 });
+
+    // useEffect(() => {
+    //     // 👇️ get global mouse coordinates
+    //     const handleWindowMouseMove = (event) => {
+    //         setGlobalCoords({
+    //             x: event.screenX,
+    //             y: event.screenY,
+    //         });
+    //     };
+    //     window.addEventListener("mousemove", handleWindowMouseMove);
+
+    //     return () => {
+    //         window.removeEventListener("mousemove", handleWindowMouseMove);
+    //     };
+    // }, []);
+
+    // const handleMouseMove = (event) => {
+    //     setCoords({
+    //         x: event.clientX - event.target.offsetLeft,
+    //         y: event.clientY - event.target.offsetTop,
+    //     });
+    // };
+
     const [guestbookentry, setGuestbookentry] = useState("");
     return (
         <Container top="flex-1">
             <Head>
                 <title>Pranjal Gupta</title>
             </Head>
-            {/* Intro to me */}
 
+            {/* Intro to me */}
             <div className="flex flex-col-reverse tablet:flex-row items-start mt-2">
                 <div className="flex flex-col tablet:mr-10 min-h-[200px]">
                     <p className="default-title">Pranjal Gupta</p>
@@ -164,6 +223,39 @@ export default function Home({ data: guestbook }) {
                         Icon={Twitter}
                     ></LinkBlock>
                 </div>
+
+                {/* <div className="cards">
+                    <LinkBlock
+                        functions={handleMouseMove}
+                        cordx={coords.x}
+                        cordy={coords.y}
+                    ></LinkBlock>
+                    <LinkBlock
+                        functions={handleMouseMove}
+                        cordx={coords.x}
+                        cordy={coords.y}
+                    ></LinkBlock>
+                    <LinkBlock
+                        functions={handleMouseMove}
+                        cordx={coords.x}
+                        cordy={coords.y}
+                    ></LinkBlock>
+                    <LinkBlock
+                        functions={handleMouseMove}
+                        cordx={coords.x}
+                        cordy={coords.y}
+                    ></LinkBlock>
+                    <LinkBlock
+                        functions={handleMouseMove}
+                        cordx={coords.x}
+                        cordy={coords.y}
+                    ></LinkBlock>
+                    <LinkBlock
+                        functions={handleMouseMove}
+                        cordx={coords.x}
+                        cordy={coords.y}
+                    ></LinkBlock>
+                </div> */}
             </Indexcard>
 
             {/* Get in Touch */}
