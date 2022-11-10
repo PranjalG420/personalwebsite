@@ -8,7 +8,7 @@ import Head from "next/head";
 
 export function Indexcard({ children }) {
     return (
-        <main className="flex flex-grow flex-col items-center rounded-xl mt-6 tablet:mt-0">
+        <main className="classHidden flex flex-col items-center justify-center my-auto min-h-[50vh] rounded-xl mt-6 tablet:mt-0">
             {children}
         </main>
     );
@@ -24,39 +24,6 @@ export function LinkBlock({ link, Icon }) {
         >
             <Icon strokeWidth={2} size={300} className="w-full h-full " />
         </a>
-
-        // background: radial-gradient(
-        //     800px circle at 100px 100px,
-        //     rgba(255, 255, 255, 0.06),
-        //     transparent 40%
-        // );
-
-        // <div
-        //     className="card"
-        //     style={{
-        //         background:
-        //             `radial-gradient(600px circle at ` +
-        //             cordx +
-        //             ` ` +
-        //             cordy +
-        //             `, rgba(255, 255, 255, 0.06), transparent 40%)`,
-        //     }}
-        // >
-        //     <span
-        //         onMouseMove={functions}
-        //         style={{
-        //             background:
-        //                 `radial-gradient(800px circle at ` +
-        //                 cordx +
-        //                 ` ` +
-        //                 cordy +
-        //                 `, rgba(255, 255, 255, 0.06), transparent 40%)`,
-        //         }}
-        //     ></span>
-        //     {/* {cordx}
-        //     {cordy} */}
-        //     {/* <span className="content-none h-[100%] left-0 top-0 w-[100%] absolute border-inherit z-20 bg-"></span> */}
-        // </div>
     );
 }
 
@@ -82,31 +49,21 @@ export function PostBlock({ children, link }) {
 }
 
 export default function Home({ data: guestbook }) {
-    // const [coords, setCoords] = useState({ x: 0, y: 0 });
-
-    // const [globalCoords, setGlobalCoords] = useState({ x: 0, y: 0 });
-
-    // useEffect(() => {
-    //     // 👇️ get global mouse coordinates
-    //     const handleWindowMouseMove = (event) => {
-    //         setGlobalCoords({
-    //             x: event.screenX,
-    //             y: event.screenY,
-    //         });
-    //     };
-    //     window.addEventListener("mousemove", handleWindowMouseMove);
-
-    //     return () => {
-    //         window.removeEventListener("mousemove", handleWindowMouseMove);
-    //     };
-    // }, []);
-
-    // const handleMouseMove = (event) => {
-    //     setCoords({
-    //         x: event.clientX - event.target.offsetLeft,
-    //         y: event.clientY - event.target.offsetTop,
-    //     });
-    // };
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("classShown");
+                } else {
+                    entry.target.classList.remove("classShown");
+                }
+            });
+        });
+        const hiddenElements = document.querySelectorAll(".classHidden");
+        hiddenElements.forEach((element) => {
+            observer.observe(element);
+        });
+    }, []);
 
     const [guestbookentry, setGuestbookentry] = useState("");
     return (
@@ -116,7 +73,7 @@ export default function Home({ data: guestbook }) {
             </Head>
 
             {/* Intro to me */}
-            <div className="flex flex-col-reverse tablet:flex-row items-start mt-2">
+            <div className="flex classHidden justify-center flex-col-reverse tablet:flex-row items-center mt-2 min-h-[50vh]">
                 <div className="flex flex-col tablet:mr-10 min-h-[200px]">
                     <p className="default-title">Pranjal Gupta</p>
                     <p className="text-base tablet:text-lg italic mb-2">
@@ -139,22 +96,23 @@ export default function Home({ data: guestbook }) {
             </div>
 
             {/* Posts */}
-
             <Indexcard>
-                <p className="default-title">Posts</p>
-                <p className="text-base text-zinc-500">
-                    I write about my experiences and what I learn in the
-                    development world. I also write about my opinions on
-                    different topics. I hope you enjoy reading my posts!
-                </p>
-                <div className="flex flex-grow flex-col tablet:flex-row items-start mx-1 tablet:items-start justify-between mt-4 min-w-full">
-                    <PostBlock link="/posts/what-is-the-mern-stack">
-                        What is the MERN stack?
-                    </PostBlock>
-                    <PostBlock link="/posts/helloworld">
-                        What is the JAMstack and why is it so popular?
-                    </PostBlock>
-                    <PostBlock link="/#">Why is Rust so popular?</PostBlock>
+                <div className="flex flex-col items-center">
+                    <p className="default-title">Posts</p>
+                    <p className="text-base text-zinc-500">
+                        I write about my experiences and what I learn in the
+                        development world. I also write about my opinions on
+                        different topics. I hope you enjoy reading my posts!
+                    </p>
+                    <div className="flex flex-grow flex-col tablet:flex-row items-start mx-1 tablet:items-start justify-between mt-4 min-w-full">
+                        <PostBlock link="/posts/what-is-the-mern-stack">
+                            What is the MERN stack?
+                        </PostBlock>
+                        <PostBlock link="/posts/helloworld">
+                            What is the JAMstack and why is it so popular?
+                        </PostBlock>
+                        <PostBlock link="/#">Why is Rust so popular?</PostBlock>
+                    </div>
                 </div>
             </Indexcard>
 
@@ -174,7 +132,7 @@ export default function Home({ data: guestbook }) {
                         {JSON.parse(guestbook).map((entry) => (
                             <div
                                 key={entry.id}
-                                className="flex items-start flex-col tablet:w-[900px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl"
+                                className="flex items-start flex-col tablet:w-[800px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl"
                             >
                                 <p className="default-subtitle">
                                     {entry.guestbookentry}
