@@ -181,39 +181,6 @@ export default function Home({ data: guestbook }) {
                         Icon={Twitter}
                     ></LinkBlock>
                 </div>
-
-                {/* <div className="cards">
-                    <LinkBlock
-                        functions={handleMouseMove}
-                        cordx={coords.x}
-                        cordy={coords.y}
-                    ></LinkBlock>
-                    <LinkBlock
-                        functions={handleMouseMove}
-                        cordx={coords.x}
-                        cordy={coords.y}
-                    ></LinkBlock>
-                    <LinkBlock
-                        functions={handleMouseMove}
-                        cordx={coords.x}
-                        cordy={coords.y}
-                    ></LinkBlock>
-                    <LinkBlock
-                        functions={handleMouseMove}
-                        cordx={coords.x}
-                        cordy={coords.y}
-                    ></LinkBlock>
-                    <LinkBlock
-                        functions={handleMouseMove}
-                        cordx={coords.x}
-                        cordy={coords.y}
-                    ></LinkBlock>
-                    <LinkBlock
-                        functions={handleMouseMove}
-                        cordx={coords.x}
-                        cordy={coords.y}
-                    ></LinkBlock>
-                </div> */}
             </Indexcard>
 
             {/* Get in Touch */}
