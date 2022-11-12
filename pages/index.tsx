@@ -54,8 +54,6 @@ export default function Home({ data: guestbook }) {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("classShown");
-                } else {
-                    entry.target.classList.remove("classShown");
                 }
             });
         });
