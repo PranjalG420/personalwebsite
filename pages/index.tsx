@@ -5,6 +5,7 @@ import Container from "../components/container";
 import { PrismaClient } from "@prisma/client";
 import { format } from "date-fns";
 import Head from "next/head";
+import NextLink from "next/link";
 
 export function Indexcard({ children }) {
     return (
@@ -32,17 +33,16 @@ export function PostBlock({ children, link }) {
         <div className="w-full mb-4 bg-gradient-to-r from-blue-500 to-blue-800 rounded-xl p-[5px] tablet:w-[275px]">
             <div className="flex flex-col bg-white dark:bg-zinc-900 rounded-xl text-base px-4 py-2 tablet:h-[150px] font-semibold justify-between">
                 <p>{children}</p>
-                <a
-                    href={link}
-                    className="flex flex-row items-center text-zinc-500 tablet:hover:text-black dark:tablet:hover:text-white tablet:hover:underline transition-all"
-                >
-                    Read More{" "}
-                    <Link
-                        strokeWidth={2}
-                        size={300}
-                        className="ml-1 tablet:w-4 tablet:h-4 w-2 h-2"
-                    ></Link>
-                </a>
+                <NextLink href={link}>
+                    <a className="flex flex-row items-center text-zinc-500 tablet:hover:text-black dark:tablet:hover:text-white tablet:hover:underline transition-all">
+                        Read More{" "}
+                        <Link
+                            strokeWidth={2}
+                            size={300}
+                            className="ml-1 tablet:w-4 tablet:h-4 w-2 h-2"
+                        ></Link>
+                    </a>
+                </NextLink>
             </div>
         </div>
     );
@@ -71,7 +71,7 @@ export default function Home({ data: guestbook }) {
             </Head>
 
             {/* Intro to me */}
-            <div className="flex classHidden justify-center flex-col-reverse tablet:flex-row items-center mt-2 min-h-[50vh]">
+            <div className="flex min-h-[50vh] classHidden justify-center flex-col-reverse tablet:flex-row items-center mt-2">
                 <div className="flex flex-col tablet:mr-10 min-h-[200px]">
                     <p className="default-title">Pranjal Gupta</p>
                     <p className="text-base tablet:text-lg italic mb-2">

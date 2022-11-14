@@ -1,5 +1,6 @@
 import React from "react";
 import { Mail, Tool, GitBranch, Figma } from "react-feather";
+import Link from "next/link";
 
 export function FooterIcon({ Icon, Link, target }) {
     return (
@@ -26,7 +27,16 @@ export default function Footer() {
                 target=""
                 Icon={Mail}
             ></FooterIcon>
-            <FooterIcon Link="/tools" Icon={Tool} target=""></FooterIcon>
+            {/* <FooterIcon Link="/tools" Icon={Tool} target=""></FooterIcon> */}
+            <Link href="/tools">
+                <a className="text-zinc-600 hover:text-zinc-500 transition-all mx-4">
+                    <Tool
+                        strokeWidth={2}
+                        size={300}
+                        className="w-6 h-6 tablet:w-8 tablet:h-8"
+                    />
+                </a>
+            </Link>
             <FooterIcon
                 Link="https://github.com/PranjalG420/personalwebsite"
                 target="_blank"
