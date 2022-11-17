@@ -80,6 +80,9 @@ export default function Tools() {
             >
                 Typescript
             </ToolBlock>
+            <ToolBlock link="https://reactjs.org/" text="Blissful Components">
+                React
+            </ToolBlock>
             <ToolBlock link="https://feathericons.com/" text="Minimalist Icons">
                 React Feather
             </ToolBlock>
