@@ -9,7 +9,7 @@ import NextLink from "next/link";
 
 export function Indexcard({ children }) {
     return (
-        <main className="classHidden flex flex-col items-center justify-center my-auto rounded-xl mt-6 tablet:mt-0">
+        <main className="classHidden flex flex-col items-center justify-center my-auto rounded-xl mt-6">
             {children}
         </main>
     );
@@ -44,6 +44,24 @@ export function PostBlock({ children, link }) {
                     </a>
                 </NextLink>
             </div>
+        </div>
+    );
+}
+
+export function ProjectBlock({ children }) {
+    return (
+        <div
+            className={
+                `flex flex-row items-center  w-full p-4 mt-2 rounded-xl ` +
+                `dark:bg-gradient-to-tl bg-zinc-200 dark:text-white tablet:text-lg text-base  dark:from-emerald-500 dark:to-emerald-800`
+            }
+        >
+            <img
+                src="/swiftsongs.png"
+                alt="swiftsongs"
+                className="tablet:w-8 tablet:h-8 mr-2"
+            />
+            <p className="text-2xl font-semibold">{children}</p>
         </div>
     );
 }
@@ -94,6 +112,7 @@ export default function Home({ data: guestbook }) {
             </div>
 
             {/* Posts */}
+
             <Indexcard>
                 <div className="flex flex-col items-center">
                     <p className="default-title">Posts</p>
@@ -112,6 +131,19 @@ export default function Home({ data: guestbook }) {
                         <PostBlock link="/#">Why is Rust so popular?</PostBlock>
                     </div>
                 </div>
+            </Indexcard>
+
+            {/* Projects */}
+
+            <Indexcard>
+                <p className="default-title">Projects</p>
+                <p className="default-text">
+                    I have a few projects that I have worked on. I have worked
+                    on a few full stack applications, and I have also worked on
+                    a few front end applications. I hope you enjoy checking out
+                    my projects!
+                </p>
+                {/* <ProjectBlock>Swift Songs</ProjectBlock> */}
             </Indexcard>
 
             {/* Guestbook */}
