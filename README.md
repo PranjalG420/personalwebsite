@@ -1,3 +1,9 @@
-<!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). -->
-
 ## This is my personal website and blog.
+
+Check it out: [pranjalg420.vercel.app](pranjalg420.vercel.app)
+
+#### Built Using:
+
+-   Next.js Framework: [https://nextjs.org/](https://nextjs.org/)
+-   Tailwind CSS: [https://tailwindcss.com/](https://tailwindcss.com/)
+-   Vercel: [https://vercel.app](https://vercel.app)
