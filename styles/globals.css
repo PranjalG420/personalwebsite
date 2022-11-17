@@ -52,13 +52,13 @@ h4 {
     @apply font-semibold text-xl tablet:text-2xl;
 }
 
-.classHidden {
+/* .classHidden {
     @apply opacity-0 transition-all duration-1000 translate-x-[-100%] blur-sm;
 }
 
 .classShown {
     @apply opacity-100 translate-x-0 blur-0;
-}
+} */
 
 @media (prefers-color-scheme: dark) {
     html {

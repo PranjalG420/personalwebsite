@@ -9,7 +9,7 @@ import NextLink from "next/link";
 
 export function Indexcard({ children }) {
     return (
-        <main className="classHidden flex flex-col items-center justify-center my-auto min-h-[50vh] rounded-xl mt-6 tablet:mt-0">
+        <main className="classHidden flex flex-col items-center justify-center my-auto rounded-xl mt-6 tablet:mt-0">
             {children}
         </main>
     );
@@ -49,19 +49,19 @@ export function PostBlock({ children, link }) {
 }
 
 export default function Home({ data: guestbook }) {
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("classShown");
-                }
-            });
-        });
-        const hiddenElements = document.querySelectorAll(".classHidden");
-        hiddenElements.forEach((element) => {
-            observer.observe(element);
-        });
-    }, []);
+    // useEffect(() => {
+    //     const observer = new IntersectionObserver((entries) => {
+    //         entries.forEach((entry) => {
+    //             if (entry.isIntersecting) {
+    //                 entry.target.classList.add("classShown");
+    //             }
+    //         });
+    //     });
+    //     const hiddenElements = document.querySelectorAll(".classHidden");
+    //     hiddenElements.forEach((element) => {
+    //         observer.observe(element);
+    //     });
+    // }, []);
 
     const [guestbookentry, setGuestbookentry] = useState("");
     return (
@@ -71,7 +71,7 @@ export default function Home({ data: guestbook }) {
             </Head>
 
             {/* Intro to me */}
-            <div className="flex min-h-[50vh] classHidden justify-center flex-col-reverse tablet:flex-row items-center mt-2">
+            <div className="flex classHidden justify-center flex-col-reverse tablet:flex-row items-center mt-2">
                 <div className="flex flex-col tablet:mr-10 min-h-[200px]">
                     <p className="default-title">Pranjal Gupta</p>
                     <p className="text-base tablet:text-lg italic mb-2">
