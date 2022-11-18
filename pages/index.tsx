@@ -21,7 +21,10 @@ export function LinkBlock({ link, Icon }) {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white aspect-square flex items-center justify-around w-full bg-gradient-to-r from-blue-500 to-blue-800 p-4 md:p-12 tablet:p-16 rounded-xl tablet:hover:translate-x-2 transition-all"
+            className={
+                `text-white aspect-square flex items-center justify-around w-full p-4 md:p-12 tablet:p-16 rounded-xl tablet:hover:translate-x-2 transition-all ` +
+                `dark:bg-gradient-to-tl bg-zinc-200 dark:text-white text-black dark:from-emerald-500 dark:to-emerald-800`
+            }
         >
             <Icon strokeWidth={2} size={300} className="w-full h-full " />
         </a>
@@ -30,7 +33,7 @@ export function LinkBlock({ link, Icon }) {
 
 export function PostBlock({ children, link }) {
     return (
-        <div className="w-full mb-4 bg-gradient-to-r from-blue-500 to-blue-800 rounded-xl p-[5px] tablet:w-[275px]">
+        <div className="w-full mb-4 dark:bg-gradient-to-tl bg-zinc-200 dark:text-white dark:from-emerald-500 dark:to-emerald-800 rounded-xl p-[5px] tablet:w-[275px]">
             <div className="flex flex-col bg-white dark:bg-zinc-900 rounded-xl text-base px-4 py-2 tablet:h-[150px] font-semibold justify-between">
                 <p>{children}</p>
                 <NextLink href={link}>
@@ -52,16 +55,16 @@ export function ProjectBlock({ children }) {
     return (
         <div
             className={
-                `flex flex-row items-center  w-full p-4 mt-2 rounded-xl ` +
-                `dark:bg-gradient-to-tl bg-zinc-200 dark:text-white tablet:text-lg text-base  dark:from-emerald-500 dark:to-emerald-800`
+                `flex flex-row items-center w-full p-2 tablet:p-4 mt-2 rounded-xl ` +
+                `dark:bg-gradient-to-tl bg-zinc-200 dark:text-white tablet:text-lg text-base dark:from-emerald-500 dark:to-emerald-800`
             }
         >
             <img
                 src="/swiftsongs.png"
                 alt="swiftsongs"
-                className="tablet:w-8 tablet:h-8 mr-2"
+                className="tablet:w-8 tablet:h-8 w-6 h-6 mr-2"
             />
-            <p className="text-2xl font-semibold">{children}</p>
+            <p className="text-xl tablet:text-2xl font-semibold">{children}</p>
         </div>
     );
 }
@@ -89,7 +92,7 @@ export default function Home({ data: guestbook }) {
             </Head>
 
             {/* Intro to me */}
-            <div className="flex classHidden justify-center flex-col-reverse tablet:flex-row items-center mt-2">
+            <div className="flex classHidden justify-center flex-col-reverse tablet:flex-row tablet:items-center items-start mt-2">
                 <div className="flex flex-col tablet:mr-10 min-h-[200px]">
                     <p className="default-title">Pranjal Gupta</p>
                     <p className="text-base tablet:text-lg italic mb-2">
@@ -143,7 +146,7 @@ export default function Home({ data: guestbook }) {
                     a few front end applications. I hope you enjoy checking out
                     my projects!
                 </p>
-                {/* <ProjectBlock>Swift Songs</ProjectBlock> */}
+                <ProjectBlock>Swift Songs</ProjectBlock>
             </Indexcard>
 
             {/* Guestbook */}
@@ -158,16 +161,16 @@ export default function Home({ data: guestbook }) {
                 </p>
                 <div className="border-zinc-500 w-full rounded-xl py-4">
                     <p className="default-subtitle">The latest comment:</p>
-                    <div className="bg-zinc-200 dark:bg-zinc-800 rounded-xl mt-4">
+                    <div className="dark:bg-gradient-to-tl bg-zinc-200 dark:text-white text-black dark:from-emerald-500 dark:to-emerald-800 rounded-xl mt-4">
                         {JSON.parse(guestbook).map((entry) => (
                             <div
                                 key={entry.id}
-                                className="flex items-start flex-col tablet:w-[800px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl"
+                                className="flex items-start flex-col tablet:w-[800px] p-4 rounded-x"
                             >
                                 <p className="default-subtitle">
                                     {entry.guestbookentry}
                                 </p>
-                                <div className="flex flex-row items-center default-text">
+                                <div className="flex flex-row items-center text-base">
                                     <p>{entry.name}</p>
                                     <p className="mx-2">{"/"}</p>
                                     <span>
