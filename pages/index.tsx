@@ -1,73 +1,34 @@
 import React, { PropsWithChildren, useEffect, useState } from "react";
 import type { GetServerSidePropsContext, NextPage } from "next";
-import { GitHub, Linkedin, Code, Twitter, Link } from "react-feather";
+import { GitHub, Linkedin, Code, Twitter } from "react-feather";
 import Container from "../components/container";
 import { PrismaClient } from "@prisma/client";
 import { format } from "date-fns";
 import Head from "next/head";
-import NextLink from "next/link";
+import {
+    Indexcard,
+    PostBlock,
+    LinkBlock,
+    CustomLink,
+} from "../components/smallcomponents";
 
-export function Indexcard({ children }) {
-    return (
-        <main className="classHidden flex flex-col items-center justify-center my-auto rounded-xl mt-6">
-            {children}
-        </main>
-    );
-}
-
-export function LinkBlock({ link, Icon }) {
-    return (
-        <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={
-                `text-white aspect-square flex items-center justify-around w-full p-4 md:p-12 tablet:p-16 rounded-xl tablet:hover:translate-x-2 transition-all ` +
-                `dark:bg-gradient-to-tl bg-zinc-200 dark:text-white text-black dark:from-emerald-500 dark:to-emerald-800`
-            }
-        >
-            <Icon strokeWidth={2} size={300} className="w-full h-full " />
-        </a>
-    );
-}
-
-export function PostBlock({ children, link }) {
-    return (
-        <div className="w-full mb-4 dark:bg-gradient-to-tl bg-zinc-200 dark:text-white dark:from-emerald-500 dark:to-emerald-800 rounded-xl p-[5px] tablet:w-[275px]">
-            <div className="flex flex-col bg-white dark:bg-zinc-900 rounded-xl text-base px-4 py-2 tablet:h-[150px] font-semibold justify-between">
-                <p>{children}</p>
-                <NextLink href={link}>
-                    <a className="flex flex-row items-center text-zinc-500 tablet:hover:text-black dark:tablet:hover:text-white tablet:hover:underline transition-all">
-                        Read More{" "}
-                        <Link
-                            strokeWidth={2}
-                            size={300}
-                            className="ml-1 tablet:w-4 tablet:h-4 w-2 h-2"
-                        ></Link>
-                    </a>
-                </NextLink>
-            </div>
-        </div>
-    );
-}
-
-export function ProjectBlock({ children }) {
-    return (
-        <div
-            className={
-                `flex flex-row items-center w-full p-2 tablet:p-4 mt-2 rounded-xl ` +
-                `dark:bg-gradient-to-tl bg-zinc-200 dark:text-white tablet:text-lg text-base dark:from-emerald-500 dark:to-emerald-800`
-            }
-        >
-            <img
-                src="/swiftsongs.png"
-                alt="swiftsongs"
-                className="tablet:w-8 tablet:h-8 w-6 h-6 mr-2"
-            />
-            <p className="text-xl tablet:text-2xl font-semibold">{children}</p>
-        </div>
-    );
-}
+// export function ProjectBlock({ children }) {
+//     return (
+//         <div
+//             className={
+//                 `flex flex-row items-center w-full p-2 tablet:p-4 mt-2 rounded-xl ` +
+//                 `dark:bg-gradient-to-tl bg-zinc-200 dark:text-white tablet:text-lg text-base dark:from-emerald-500 dark:to-emerald-800`
+//             }
+//         >
+//             <img
+//                 src="/swiftsongs.png"
+//                 alt="swiftsongs"
+//                 className="tablet:w-8 tablet:h-8 w-6 h-6 mr-2"
+//             />
+//             <p className="text-xl tablet:text-2xl font-semibold">{children}</p>
+//         </div>
+//     );
+// }
 
 export default function Home({ data: guestbook }) {
     // useEffect(() => {
@@ -140,13 +101,13 @@ export default function Home({ data: guestbook }) {
 
             <Indexcard>
                 <p className="default-title">Projects</p>
-                <p className="default-text">
-                    I have a few projects that I have worked on. I have worked
-                    on a few full stack applications, and I have also worked on
-                    a few front end applications. I hope you enjoy checking out
-                    my projects!
+                <p className="default-text mb-2">
+                    Here are a few projects that I have worked on. I have worked
+                    on a few full stack applications, and have also worked on a
+                    few front end applications. I hope you enjoy checking out my
+                    projects!
                 </p>
-                <ProjectBlock>Swift Songs</ProjectBlock>
+                <CustomLink link="/projects">Check out my Projects</CustomLink>
             </Indexcard>
 
             {/* Guestbook */}
@@ -161,7 +122,7 @@ export default function Home({ data: guestbook }) {
                 </p>
                 <div className="border-zinc-500 w-full rounded-xl py-4">
                     <p className="default-subtitle">The latest comment:</p>
-                    <div className="dark:bg-gradient-to-tl bg-zinc-200 dark:text-white text-black dark:from-emerald-500 dark:to-emerald-800 rounded-xl mt-4">
+                    <div className="emerald-bg rounded-xl mt-4">
                         {JSON.parse(guestbook).map((entry) => (
                             <div
                                 key={entry.id}

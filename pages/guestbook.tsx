@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { GetServerSidePropsContext } from "next";
 import { PrismaClient } from "@prisma/client";
 import { format } from "date-fns";
-import { Button } from "../components/smallcomponents";
+import { CustomButton } from "../components/smallcomponents";
 import Head from "next/head";
 
 export default function Guestbook({ data: guestbook }) {
@@ -72,7 +72,9 @@ export default function Guestbook({ data: guestbook }) {
                     <p className="my-2 text-base tablet:text-lg">
                         And leave a cool message for future viewers!
                     </p>
-                    <Button button_function={() => signIn()}>Sign in</Button>
+                    <CustomButton button_function={() => signIn()}>
+                        Sign in
+                    </CustomButton>
                     <p className="mt-2 italic text-base text-zinc-500">
                         Only your name will be shown.
                     </p>

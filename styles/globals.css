@@ -52,6 +52,10 @@ h4 {
     @apply font-semibold text-xl tablet:text-2xl;
 }
 
+.emerald-bg {
+    @apply dark:bg-gradient-to-bl dark:from-emerald-500 dark:to-emerald-800 dark:text-white bg-zinc-200;
+}
+
 /* .classHidden {
     @apply opacity-0 transition-all duration-1000 translate-x-[-100%] blur-sm;
 }
