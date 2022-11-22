@@ -4,7 +4,7 @@ export default function About() {
             <p className="desktop:text-6xl text-3xl mb-4 font-medium">About</p>
             <div className="desktop:text-xl text-lg flex flex-col gap-6">
                 <p>
-                    Hey there! I'm a young web developer who is passionate about
+                    Hey! I'm a young web developer who is passionate about
                     creating interactive and dynamic web applications. My skills
                     are focused on Javascript, React, Nextjs, Nodejs, and
                     Express, which allows me to create robust, scalable, and
