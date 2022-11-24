@@ -27,7 +27,6 @@ export default function Footer() {
                 target=""
                 Icon={Mail}
             ></FooterIcon>
-            {/* <FooterIcon Link="/tools" Icon={Tool} target=""></FooterIcon> */}
             <Link href="/tools">
                 <a className="text-zinc-600 hover:text-zinc-500 transition-all mx-4">
                     <Tool
