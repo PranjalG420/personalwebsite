@@ -101,7 +101,7 @@ export default function Home({ data: guestbook }) {
 
             <Indexcard>
                 <p className="default-title">Projects</p>
-                <p className="default-text mb-2">
+                <p className="default-text mb-4">
                     Here are a few projects that I have worked on. I have worked
                     on a few full stack applications, and have also worked on a
                     few front end applications. I hope you enjoy checking out my
@@ -122,27 +122,29 @@ export default function Home({ data: guestbook }) {
                 </p>
                 <div className="border-zinc-500 w-full rounded-xl py-4">
                     <p className="default-subtitle">The latest comment:</p>
-                    <div className="emerald-bg rounded-xl mt-4">
-                        {JSON.parse(guestbook).map((entry) => (
-                            <div
-                                key={entry.id}
-                                className="flex items-start flex-col tablet:w-[800px] p-4 rounded-x"
-                            >
-                                <p className="default-subtitle">
-                                    {entry.guestbookentry}
-                                </p>
-                                <div className="flex flex-row items-center text-base">
-                                    <p>{entry.name}</p>
-                                    <p className="mx-2">{"/"}</p>
-                                    <span>
-                                        {format(
-                                            new Date(entry.date),
-                                            "dd MMMM yyyy"
-                                        )}
-                                    </span>
+                    <div className="emerald-bg p-[5px] rounded-xl">
+                        <div className="dark-bg rounded-xl">
+                            {JSON.parse(guestbook).map((entry) => (
+                                <div
+                                    key={entry.id}
+                                    className="flex items-start flex-col tablet:w-[800px] p-4 rounded-x"
+                                >
+                                    <p className="default-subtitle">
+                                        {entry.guestbookentry}
+                                    </p>
+                                    <div className="flex flex-row items-center text-base">
+                                        <p>{entry.name}</p>
+                                        <p className="mx-2">{"/"}</p>
+                                        <span>
+                                            {format(
+                                                new Date(entry.date),
+                                                "dd MMMM yyyy"
+                                            )}
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </Indexcard>

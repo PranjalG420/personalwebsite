@@ -53,7 +53,15 @@ h4 {
 }
 
 .emerald-bg {
-    @apply dark:bg-gradient-to-bl dark:from-emerald-500 dark:to-emerald-800 dark:text-white bg-zinc-200;
+    @apply bg-gradient-to-bl from-emerald-500 to-emerald-800 text-white;
+}
+
+/* .emerald-bg {
+    @apply dark:bg-gradient-to-bl dark:from-emerald-500 dark:to-emerald-800 dark:text-white bg-zinc-400;
+} */
+
+.dark-bg {
+    @apply text-black dark:text-white bg-white dark:bg-zinc-900;
 }
 
 /* .classHidden {

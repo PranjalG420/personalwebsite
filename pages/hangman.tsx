@@ -1,55 +1,70 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Container from "../components/container";
 
 export default function Hangman() {
-    const arr = [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "o",
-        "p",
-        "q",
-        "r",
-        "s",
-        "t",
-        "u",
-        "v",
-        "w",
-        "x",
-        "y",
-        "z",
-    ];
-    const word = "Hello World";
-    function checkWord(letter) {
-        for (let i = 0; i < word.length; i++) {
-            if (word[i].toLowerCase() === letter) {
-                console.log(letter + " is in word");
-            }
-        }
-    }
+    const word = "hello";
+    const [guess, setGuess] = useState(0);
+    const [isFailed, setIsFailed] = useState(false);
+    const alpha = Array.from(Array(26)).map((e, i) => i + 65);
+    const [guessed, setGuessed] = useState<string[]>([]);
+    const addGuessedLetter = useCallback(
+        (letter: string) => {
+            if (guessed.includes(letter)) return;
+            setGuessed((prev) => [...prev, letter]);
+        },
+        [guessed]
+    );
     return (
         <Container top="flex-1">
-            <div className="flex flex-wrap justify-center items-center">
-                {arr.map((letter) => (
-                    <button
-                        key={letter}
-                        onClick={() => checkWord(letter)}
-                        className="bg-blue-500 hover:bg-blue-700 m-1 min-w-[55px] text-white font-bold py-2 px-4 rounded"
-                    >
-                        {letter.toUpperCase()}
-                    </button>
-                ))}
+            <div className="flex flex-col items-center">
+                <p>Guess {guess} of 5</p>
+                <div className="flex flex-row  mx-auto mb-5">
+                    {word.split("").map((letter, index) => {
+                        return (
+                            <div
+                                key={index}
+                                className="flex flex-wrap justify-center min-h-[55px] min-w-[55px] items-center text-3xl border-b-2 mx-1 gap-1 "
+                            >
+                                <p
+                                    className={
+                                        guessed.includes(letter)
+                                            ? "visible"
+                                            : "hidden"
+                                    }
+                                >
+                                    {letter.toUpperCase()}
+                                </p>
+                            </div>
+                        );
+                    })}
+                </div>
+                <div className="flex flex-wrap mx-auto justify-center ">
+                    {alpha.map((x) => (
+                        <button
+                            key={x}
+                            onClick={() => {
+                                if (
+                                    word
+                                        .split("")
+                                        .includes(
+                                            String.fromCharCode(x).toLowerCase()
+                                        )
+                                ) {
+                                    addGuessedLetter(
+                                        String.fromCharCode(x).toLowerCase()
+                                    );
+                                } else if (guess < 5) {
+                                    setGuess((prev) => prev + 1);
+                                } else {
+                                    setIsFailed(true);
+                                }
+                            }}
+                            className="bg-blue-500 hover:bg-blue-700 m-1 tablet:min-w-[55px] text-white font-bold py-2 px-4 rounded"
+                        >
+                            {String.fromCharCode(x)}
+                        </button>
+                    ))}
+                </div>
             </div>
         </Container>
     );

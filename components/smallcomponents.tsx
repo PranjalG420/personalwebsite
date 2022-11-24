@@ -16,14 +16,16 @@ export function CustomButton({ children, button_function }) {
 export function CustomLink({ children, link }) {
     return (
         <NextLink href={link}>
-            <a className="">{children}</a>
+            <a className="px-4 py-2 rounded-lg emerald-bg text-lg tablet:text-xl transition-all tablet:hover:ml-2">
+                {children}
+            </a>
         </NextLink>
     );
 }
 
 export function Indexcard({ children }) {
     return (
-        <main className="classHidden flex flex-col items-center justify-center my-auto rounded-xl mt-6">
+        <main className="classHidden flex flex-col items-center justify-center tablet:my-4 my-2 rounded-xl">
             {children}
         </main>
     );
@@ -31,27 +33,26 @@ export function Indexcard({ children }) {
 
 export function LinkBlock({ link, Icon }) {
     return (
-        <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white aspect-square flex items-center justify-around w-full p-4 md:p-12 tablet:p-16 rounded-xl tablet:hover:translate-x-2 transition-all emerald-bg"
-        >
-            <Icon strokeWidth={2} size={300} className="w-full h-full " />
-        </a>
+        <div className="emerald-bg p-[5px] rounded-xl tablet:hover:translate-x-2 transition-all ">
+            <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white aspect-square flex items-center justify-around w-full p-4 md:p-12 tablet:p-16 rounded-xl dark-bg"
+            >
+                <Icon strokeWidth={2} size={300} className="w-full h-full " />
+            </a>
+        </div>
     );
 }
 
 export function PostBlock({ children, link }) {
     return (
         <div className="w-full mb-4 emerald-bg rounded-xl p-[5px] tablet:w-[275px]">
-            <div className="flex flex-col text-black dark:text-white bg-white dark:bg-zinc-900 rounded-xl text-base px-4 py-2 tablet:h-[150px] font-semibold justify-between">
+            <div className="flex flex-col dark-bg rounded-xl text-base px-4 py-2 tablet:h-[150px] font-semibold justify-between">
                 <p>{children}</p>
                 <NextLink href={link}>
-                    <a
-                        rel="noopener noreferrer"
-                        className="flex flex-row items-center text-zinc-500 tablet:hover:text-black dark:tablet:hover:text-white tablet:hover:underline transition-all"
-                    >
+                    <a className="flex flex-row items-center text-zinc-500 tablet:hover:text-black dark:tablet:hover:text-white tablet:hover:underline transition-all">
                         Read More{" "}
                         <Link
                             strokeWidth={2}
