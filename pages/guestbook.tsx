@@ -25,7 +25,7 @@ export default function Guestbook({ data: guestbook }) {
                     name: session.user.name,
                 }),
             });
-            router.push("/login");
+            router.push("/guestbook");
         } catch (error) {
             console.log(error);
         }
