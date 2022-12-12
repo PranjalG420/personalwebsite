@@ -12,51 +12,17 @@ import {
     CustomLink,
 } from "../components/smallcomponents";
 
-// export function ProjectBlock({ children }) {
-//     return (
-//         <div
-//             className={
-//                 `flex flex-row items-center w-full p-2 tablet:p-4 mt-2 rounded-xl ` +
-//                 `dark:bg-gradient-to-tl bg-zinc-200 dark:text-white tablet:text-lg text-base dark:from-emerald-500 dark:to-emerald-800`
-//             }
-//         >
-//             <img
-//                 src="/swiftsongs.png"
-//                 alt="swiftsongs"
-//                 className="tablet:w-8 tablet:h-8 w-6 h-6 mr-2"
-//             />
-//             <p className="text-xl tablet:text-2xl font-semibold">{children}</p>
-//         </div>
-//     );
-// }
-
 export default function Home({ data: guestbook }) {
-    // useEffect(() => {
-    //     const observer = new IntersectionObserver((entries) => {
-    //         entries.forEach((entry) => {
-    //             if (entry.isIntersecting) {
-    //                 entry.target.classList.add("classShown");
-    //             }
-    //         });
-    //     });
-    //     const hiddenElements = document.querySelectorAll(".classHidden");
-    //     hiddenElements.forEach((element) => {
-    //         observer.observe(element);
-    //     });
-    // }, []);
-
     const [guestbookentry, setGuestbookentry] = useState("");
     return (
         <Container top="flex-1">
             <Head>
                 <title>Pranjal Gupta</title>
             </Head>
-
-            {/* Intro to me */}
-            <div className="flex classHidden justify-center flex-col-reverse tablet:flex-row tablet:items-center items-start mt-2">
-                <div className="flex flex-col tablet:mr-10 min-h-[200px]">
+            <div className="flex classHidden justify-center flex-col-reverse tablet:flex-row items-center">
+                <div className="flex flex-col tablet:items-start items-center  tablet:mr-10 min-h-[200px]">
                     <p className="default-title">Pranjal Gupta</p>
-                    <p className="text-base tablet:text-lg italic mb-2">
+                    <p className="text-lg tablet:text-lg italic my-2">
                         Aspiring Web Developer
                     </p>
                     <p className="default-text">
@@ -77,7 +43,7 @@ export default function Home({ data: guestbook }) {
 
             {/* Posts */}
 
-            <Indexcard>
+            {/* <Indexcard>
                 <div className="flex flex-col items-center">
                     <p className="default-title">Posts</p>
                     <p className="text-base text-zinc-500">
@@ -95,11 +61,11 @@ export default function Home({ data: guestbook }) {
                         <PostBlock link="/#">Why is Rust so popular?</PostBlock>
                     </div>
                 </div>
-            </Indexcard>
+            </Indexcard> */}
 
             {/* Projects */}
 
-            <Indexcard>
+            {/* <Indexcard>
                 <p className="default-title">Projects</p>
                 <p className="default-text mb-4">
                     Here are a few projects that I have worked on. I have worked
@@ -108,11 +74,11 @@ export default function Home({ data: guestbook }) {
                     projects!
                 </p>
                 <CustomLink link="/projects">Check out my Projects</CustomLink>
-            </Indexcard>
+            </Indexcard> */}
 
             {/* Guestbook */}
 
-            <Indexcard>
+            {/* <Indexcard>
                 <p className="default-title">Guestbook</p>
                 <p className="default-text">
                     The Guestbook is a place where you can leave a message for
@@ -147,11 +113,11 @@ export default function Home({ data: guestbook }) {
                         </div>
                     </div>
                 </div>
-            </Indexcard>
+            </Indexcard> */}
 
             {/* Links */}
 
-            <Indexcard>
+            {/* <Indexcard>
                 <p className="default-title">Links</p>
                 <p className="default-text">
                     I post any updates on projects on my repository. Conenct
@@ -177,7 +143,7 @@ export default function Home({ data: guestbook }) {
                         Icon={Twitter}
                     ></LinkBlock>
                 </div>
-            </Indexcard>
+            </Indexcard> */}
 
             {/* Get in Touch */}
         </Container>

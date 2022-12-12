@@ -38,46 +38,50 @@ export default function Guestbook({ data: guestbook }) {
             </Head>
             <p className="default-title">Guestbook</p>
             {(session && (
-                <div className="flex items-start flex-col tablet:w-[900px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl mb-2">
-                    <p className="text-lg tablet:text-xl font-semibold">
+                <div className="flex items-start flex-col tablet:w-[900px] gap-4 py-4 rounded-xl">
+                    <p className="default-subtitle2">
                         Leave a cool and inspirational message for future
                         viewers!
                     </p>
-                    <form onSubmit={handleSend}>
-                        <textarea
-                            className="mt-2 w-full p-2 font-semibold text-zinc-400 rounded-lg resize-none"
-                            placeholder="Enter your message here..."
-                            maxLength={100}
-                            rows={1}
-                            onChange={(e) => {
-                                setGuestbookentry(e.target.value);
-                            }}
-                        ></textarea>
-                        <button
+                    <textarea
+                        className=" w-full p-2 font-semibold text-zinc-400 dark:bg-zinc-800 bg-zinc-200 rounded-lg resize-none"
+                        placeholder="Enter your message here."
+                        maxLength={100}
+                        rows={1}
+                        onChange={(e) => {
+                            setGuestbookentry(e.target.value);
+                        }}
+                    ></textarea>
+                    {/* <button
                             type="submit"
                             className="my-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-blue-800 text-lg tablet:text-xl transition-all tablet:hover:ml-2"
                         >
                             Submit
-                        </button>
-                    </form>
-                    <p className="italic default-text">
+                        </button> */}
+                    <CustomButton button_function={handleSend}>
+                        Submit
+                    </CustomButton>
+
+                    <p className="italic default-text font-semibold">
                         Only your name will be shown.
                     </p>
+                    <div className="border-b-2 dark:border-b-zinc-200 border-b-zinc-900 w-full mb-2"></div>
                 </div>
             )) || (
-                <div className="flex items-start flex-col tablet:w-[900px] bg-zinc-200 dark:bg-zinc-800 p-4 rounded-xl mb-2">
+                <div className="flex items-start flex-col tablet:w-[900px] gap-4 py-4 rounded-xl">
                     <p className="default-subtitle">
                         Sign in to use the Guestbook.
                     </p>
-                    <p className="my-2 text-base tablet:text-lg">
+                    <p className="default-subtitle2">
                         And leave a cool message for future viewers!
                     </p>
                     <CustomButton button_function={() => signIn()}>
                         Sign in
                     </CustomButton>
-                    <p className="mt-2 italic text-base text-zinc-500">
+                    <p className="default-text font-semibold italic">
                         Only your name will be shown.
                     </p>
+                    <div className="border-b-2 dark:border-b-zinc-200 border-b-zinc-900 w-full my-2"></div>
                 </div>
             )}
             {JSON.parse(guestbook).map((entry) => (
@@ -85,7 +89,7 @@ export default function Guestbook({ data: guestbook }) {
                     key={entry.id}
                     className="flex items-start flex-col tablet:w-[900px] p-2 rounded-xl"
                 >
-                    <p className="default-subtitle">{entry.guestbookentry}</p>
+                    <p className="default-subtitle2">{entry.guestbookentry}</p>
                     <div className="flex flex-row items-center default-text">
                         <p>{entry.name}</p>
                         <p className="mx-2">{"/"}</p>

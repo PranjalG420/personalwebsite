@@ -9,6 +9,7 @@ export default function Projects() {
             <Head>
                 <title>Projects</title>
             </Head>
+            <div className="border-b-2 dark:border-b-zinc-200 border-b-zinc-900 w-full mb-2"></div>
             <ProjectBlock
                 title="Swift Songs"
                 gitLink="https://github.com/PranjalG420/SwiftSongs"

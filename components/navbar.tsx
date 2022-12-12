@@ -23,11 +23,16 @@ export default function navbar() {
 
     useEffect(() => setMounted(true), []);
     return (
-        <div className="animate-navLoad flex tablet:min-w-[900px] min-w-full justify-between z-20 min-h-[60px] sticky top-0 right-0 left-0 backdrop-blur items-center text-sm tablet:text-xl font-semibold">
+        <div className="animate-navLoad flex tablet:min-w-[1200px] min-w-full justify-between z-20 min-h-[60px] sticky top-0 right-0 left-0 backdrop-blur items-center text-sm tablet:text-xl font-semibold">
             <div className="flex justify-center">
                 <Link href="/">
                     <a className="px-4 py-2 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all">
                         Home
+                    </a>
+                </Link>
+                <Link href="/projects">
+                    <a className="px-4 py-2 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all">
+                        Projects
                     </a>
                 </Link>
                 <Link href="/guestbook">

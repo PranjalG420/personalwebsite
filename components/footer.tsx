@@ -1,23 +1,7 @@
 import React from "react";
 import { Mail, Tool, GitBranch, Figma } from "react-feather";
 import Link from "next/link";
-
-export function FooterIcon({ Icon, Link, target }) {
-    return (
-        <a
-            href={Link}
-            target={target}
-            rel="noopener noreferrer"
-            className="text-zinc-600 hover:text-zinc-500 transition-all mx-4"
-        >
-            <Icon
-                strokeWidth={2}
-                size={300}
-                className="w-6 h-6 tablet:w-8 tablet:h-8"
-            />
-        </a>
-    );
-}
+import { FooterIcon } from "./smallcomponents";
 
 export default function Footer() {
     return (
