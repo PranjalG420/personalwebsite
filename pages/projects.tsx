@@ -1,27 +1,49 @@
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import Container from "../components/container";
+import projectData from "../components/projectData";
 import { ProjectBlock } from "../components/smallcomponents";
 
 export default function Projects() {
+    const [search, setSearch] = useState("");
+    const maxID = projectData
+        .map((item) => item.id)
+        .reduce((acc) => acc + 1, 0);
+    const projects = projectData.map((item) => {
+        return (
+            <ProjectBlock
+                key={item.id}
+                title={item.title}
+                gitLink={item.gitLink}
+                siteLink={item.siteLink}
+                searched={
+                    item.title.toLowerCase().includes(search)
+                        ? "visible"
+                        : "hidden"
+                }
+            >
+                {item.text}
+            </ProjectBlock>
+        );
+    });
     return (
         <Container top="flex-0">
             <Head>
                 <title>Projects</title>
             </Head>
-            <div className="border-b-2 dark:border-b-zinc-200 border-b-zinc-900 w-full mb-2"></div>
-            <ProjectBlock
-                title="Swift Songs"
-                gitLink="https://github.com/PranjalG420/SwiftSongs"
-                siteLink={"https://swiftsongs.vercel.app/"}
-            >
-                This is my first major React project. It involves the use of
-                Javascript, HTML, CSS and Tailwind CSS for styling. It is a
-                music player that uses uploaded songs. It is hosted on Vercel.
-                Some features about this player: It has a button for shuffling
-                songs, a button to loop the current song, a seek bar, a volume
-                bar and a playlist.
-            </ProjectBlock>
+            <input
+                type="search"
+                className="p-2 font-semibold dark:bg-zinc-800 bg-zinc-200 rounded w-full my-2"
+                placeholder={
+                    "Search through " +
+                    maxID +
+                    (maxID == 1 ? " project" : " projects")
+                }
+                onChange={(e) => {
+                    setSearch(e.target.value);
+                }}
+            ></input>
+            {projects}
         </Container>
     );
 }

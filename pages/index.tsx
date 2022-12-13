@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useEffect, useState } from "react";
 import type { GetServerSidePropsContext, NextPage } from "next";
-import { GitHub, Linkedin, Code, Twitter } from "react-feather";
+import { GitHub, Linkedin, Code, Twitter, Link } from "react-feather";
 import Container from "../components/container";
 import { PrismaClient } from "@prisma/client";
 import { format } from "date-fns";

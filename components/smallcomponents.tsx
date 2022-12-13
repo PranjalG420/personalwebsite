@@ -79,9 +79,15 @@ export const PostBlock = ({ children, link }) => {
 
 // Project Page
 
-export const ProjectBlock = ({ children, title, gitLink, siteLink }) => {
+export const ProjectBlock = ({
+    children,
+    title,
+    gitLink,
+    siteLink,
+    searched,
+}) => {
     return (
-        <div className="rounded-xl w-full flex flex-col gap-2">
+        <div className={"rounded-xl w-full flex flex-col gap-2 " + searched}>
             <div className="flex flex-col dark-bg rounded-xl p-2">
                 <p className="default-subtitle">{title}</p>
                 <p className="default-text my-2">{children}</p>
@@ -149,11 +155,11 @@ export const FooterIcon = ({ Icon, Link, target }) => {
             href={Link}
             target={target}
             rel="noopener noreferrer"
-            className="text-zinc-600 hover:text-zinc-500 transition-all mx-4"
+            className="text-zinc-600 hover:text-zinc-500 transition-all"
         >
             <Icon
                 strokeWidth={2}
-                size={300}
+                size={30}
                 className="w-6 h-6 tablet:w-8 tablet:h-8"
             />
         </a>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Sun, Moon, LogIn, LogOut } from "react-feather";
+import { Sun, Moon, LogIn, LogOut, Home, Edit2, BookOpen } from "react-feather";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -8,7 +8,7 @@ export function IconBlock({ Icon }) {
     return (
         <Icon
             strokeWidth={2}
-            size={300}
+            size={30}
             className="tablet:w-8 tablet:h-8 w-6 h-6"
         />
     );
@@ -23,21 +23,24 @@ export default function navbar() {
 
     useEffect(() => setMounted(true), []);
     return (
-        <div className="animate-navLoad flex tablet:min-w-[1200px] min-w-full justify-between z-20 min-h-[60px] sticky top-0 right-0 left-0 backdrop-blur items-center text-sm tablet:text-xl font-semibold">
-            <div className="flex justify-center">
+        <div className="flex justify-between max-w-[1200px] w-full z-20 min-h-[60px] sticky top-0 right-0 left-0 backdrop-blur items-center text-sm tablet:text-xl font-semibold">
+            <div className="flex items-center">
                 <Link href="/">
-                    <a className="px-4 py-2 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all">
-                        Home
+                    <a className="px-4 py-2 rounded hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all">
+                        <Home className="tablet:hidden visible" />
+                        <p className="max-tablet:hidden">Home</p>
                     </a>
                 </Link>
                 <Link href="/projects">
-                    <a className="px-4 py-2 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all">
-                        Projects
+                    <a className="px-4 py-2 rounded hover:bg-zinc-200 dark:hover:bg-zinc-800 tablet:w-auto w-full text-center transition-all">
+                        <Edit2 className="tablet:hidden visible" />
+                        <p className="max-tablet:hidden">Projects</p>
                     </a>
                 </Link>
                 <Link href="/guestbook">
-                    <a className="px-4 py-2 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all">
-                        Guestbook
+                    <a className="px-4 py-2 rounded hover:bg-zinc-200 dark:hover:bg-zinc-800 tablet:w-auto w-full text-center transition-all">
+                        <BookOpen className="tablet:hidden visible" />
+                        <p className="max-tablet:hidden">Guestbook</p>
                     </a>
                 </Link>
             </div>
