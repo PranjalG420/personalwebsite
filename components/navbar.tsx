@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Sun, Moon, LogIn, LogOut, Home, Edit2, BookOpen } from "react-feather";
+import {
+    Sun,
+    Moon,
+    LogIn,
+    LogOut,
+    Home,
+    BookOpen,
+    Database,
+} from "react-feather";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -33,7 +41,7 @@ export default function navbar() {
                 </Link>
                 <Link href="/projects">
                     <a className="px-4 py-2 rounded hover:bg-zinc-200 dark:hover:bg-zinc-800 tablet:w-auto w-full text-center transition-all">
-                        <Edit2 className="tablet:hidden visible" />
+                        <Database className="tablet:hidden visible" />
                         <p className="max-tablet:hidden">Projects</p>
                     </a>
                 </Link>
