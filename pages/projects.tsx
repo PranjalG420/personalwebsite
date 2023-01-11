@@ -17,7 +17,7 @@ export default function Projects() {
                 gitLink={item.gitLink}
                 siteLink={item.siteLink}
                 searched={
-                    item.title.toLowerCase().includes(search)
+                    item.title.toLowerCase().includes(search.toLowerCase())
                         ? "visible"
                         : "hidden"
                 }
