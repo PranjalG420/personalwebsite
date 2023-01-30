@@ -12,6 +12,8 @@ import {
     CustomLink,
 } from "../components/smallcomponents";
 
+// testing
+
 export default function Home({ data: guestbook }) {
     const [guestbookentry, setGuestbookentry] = useState("");
     return (
