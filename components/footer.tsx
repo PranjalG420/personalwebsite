@@ -13,7 +13,7 @@ import { FooterIcon } from "./smallcomponents";
 
 export default function Footer() {
     return (
-        <div className="tablet:mt-2 flex gap-5 justify-center relative z-0 min-h-[60px] bottom-0 left-0 right-0 w-full items-center">
+        <div className="tablet:mt-2 flex gap-5 justify-center relative z-0 min-h-[60px] bottom-0 left-0 right-0 w-full items-center print:hidden">
             <FooterIcon
                 Link="mailto:pranjalg1122@gmail.com"
                 target=""
