@@ -27,7 +27,7 @@ export default function Projects() {
         );
     });
     return (
-        <Container top="flex-0">
+        <Container>
             <Head>
                 <title>Projects</title>
             </Head>

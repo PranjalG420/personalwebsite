@@ -6,7 +6,7 @@ import { CustomLink } from "../components/smallcomponents";
 
 export default function errorPage() {
     return (
-        <Container top="flex-1">
+        <Container>
             <Head>
                 <title>404</title>
             </Head>
