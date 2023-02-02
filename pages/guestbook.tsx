@@ -32,7 +32,7 @@ export default function Guestbook({ data: guestbook }) {
     };
 
     return (
-        <Container top="flex-0">
+        <Container>
             <Head>
                 <title>Guestbook</title>
             </Head>
