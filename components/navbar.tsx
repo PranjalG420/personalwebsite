@@ -31,7 +31,7 @@ export default function navbar() {
 
     useEffect(() => setMounted(true), []);
     return (
-        <div className="flex justify-between max-w-[1200px] w-full z-20 min-h-[60px] sticky top-0 right-0 left-0 backdrop-blur items-center text-sm tablet:text-xl font-semibold">
+        <div className="flex justify-between max-w-[1200px] mx-auto w-full z-20 min-h-[60px] sticky top-0 right-0 left-0 backdrop-blur items-center text-sm tablet:text-xl font-semibold print:hidden">
             <div className="flex items-center">
                 <Link href="/">
                     <a className="px-4 py-2 rounded hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all">
