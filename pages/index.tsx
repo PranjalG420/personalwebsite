@@ -14,16 +14,26 @@ import {
 import { useMix } from "@pranjalg420/usemix";
 
 export default function Home({ data: guestbook }) {
-    const [guestbookentry, setGuestbookentry] = useState("");
-
-    const [text, play] = useMix({
-        entry: "GITHUB",
+    const [github, playGithub] = useMix({
+        entry: "GitHub",
         tick: 2,
         delay: 50,
         upper: true,
     });
-    const [text2, play2] = useMix({
-        entry: "Joe",
+    const [linkedin, playLinkedin] = useMix({
+        entry: "Linkedin",
+        tick: 2,
+        delay: 50,
+        upper: true,
+    });
+    const [twitter, playTwitter] = useMix({
+        entry: "Twitter",
+        tick: 2,
+        delay: 50,
+        upper: true,
+    });
+    const [mail, playMail] = useMix({
+        entry: "mail",
         tick: 2,
         delay: 50,
         upper: true,
@@ -34,25 +44,49 @@ export default function Home({ data: guestbook }) {
             <Head>
                 <title>Pranjal Gupta</title>
             </Head>
-            <div className="w-full flex flex-col text-[8rem] leading-none items-start">
-                <a
-                    href="https://github.com/PranjalG420"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-mono"
-                    onMouseOver={play}
-                >
-                    {text}
-                </a>
-                <a
-                    href="https://github.com/PranjalG420"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-mono"
-                    onMouseOver={play2}
-                >
-                    {text2}
-                </a>
+            <div className="w-full flex flex-col desktop:text-[3rem] text-2xl leading-none items-start">
+                <p>
+                    Hello my name is Pranjal Gupta. I reguarly create projects
+                    on{" "}
+                    <a
+                        href="https://github.com/PranjalG420"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-neutral-500"
+                        onMouseOver={playGithub}
+                    >
+                        {github}
+                    </a>
+                    . Check out my{" "}
+                    <a
+                        href="https://www.linkedin.com/in/pranjal-gupta-10a595224/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#0A66C2]"
+                        onMouseOver={playLinkedin}
+                    >
+                        {linkedin}
+                    </a>{" "}
+                    and tweet me on{" "}
+                    <a
+                        href="https://twitter.com/PranjalG420"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#1DA1F2]"
+                        onMouseOver={playTwitter}
+                    >
+                        {twitter}
+                    </a>{" "}
+                    or send me a{" "}
+                    <a
+                        href="mailto:pranjalg1122@gmail.com"
+                        className="text-red-600"
+                        onMouseOver={playMail}
+                    >
+                        {mail}
+                    </a>
+                    .
+                </p>
             </div>
         </Container>
     );
