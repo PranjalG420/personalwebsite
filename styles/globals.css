@@ -38,3 +38,15 @@ a {
 ::-webkit-scrollbar-thumb:hover {
     @apply bg-neutral-500;
 }
+
+#signature {
+    stroke-dasharray: 1718;
+    stroke-dashoffset: 1718;
+    animation: signature 3s ease forwards;
+}
+
+@keyframes signature {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
