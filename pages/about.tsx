@@ -1,7 +1,8 @@
 import Head from "next/head";
-import React, { useState } from "react";
+import { useState } from "react";
 import Container from "../components/container";
 import projectData from "../components/projectData";
+import { ChevronLeft, ChevronRight } from "react-feather";
 
 export default function Projects() {
     const [search, setSearch] = useState<string>("");
@@ -25,13 +26,19 @@ export default function Projects() {
                 highly functional. If you are looking for a dedicated and
                 reliable developer, look no further!
             </p>
-            <h1 className="desktop:text-4xl text-2xl font-semibold mt-16w">
-                My projects
+            {/* <h1 className="desktop:text-4xl text-2xl font-semibold mt-16">
+                My Skills
+            </h1>
+            <div className="flex flex-row flex-wrap">
+
+            </div> */}
+            <h1 className="desktop:text-4xl text-2xl font-semibold mt-16">
+                My Projects
             </h1>
             <input
                 type="search"
                 spellCheck="false"
-                className="bg-black py-1 text-neutral-400 focus:outline-none border-b-2 mt-2 mb-6"
+                className="bg-neutral-800 p-1 text-neutral-400 focus:outline-none rounded mt-4"
                 placeholder={
                     "Search through " +
                     maxID +
@@ -41,18 +48,101 @@ export default function Projects() {
                     setSearch(e.target.value);
                 }}
             ></input>
-            {projectData.map((item) => {
-                if (!item.title.toLowerCase().includes(search.toLowerCase())) {
-                    return;
-                }
+            <div className="flex flex-row flex-wrap justify-around items-center mt-4 border-t-2">
+                {" "}
+                {projectData.map((item) => {
+                    if (
+                        !item.title.toLowerCase().includes(search.toLowerCase())
+                    ) {
+                        return;
+                    }
+                    const [slide, setSlide] = useState<number>(0);
+                    return (
+                        <div
+                            key={item.id}
+                            className="flex desktop:flex-row flex-col items-start gap-2 border-b-2 w-full py-4"
+                        >
+                            <div className="relative">
+                                {/* Left carousel button */}
 
-                return (
-                    <div className="flex flex-col items-start">
-                        <h1 className="desktop:text-2xl">{item.title}</h1>
-                        <p>{item.text}</p>
-                    </div>
-                );
-            })}
+                                <button
+                                    className={
+                                        "absolute bottom-[45%] left-0 p-1 " +
+                                        (Object.keys(item.images).length !== 1
+                                            ? ""
+                                            : "hidden")
+                                    }
+                                    onClick={() => {
+                                        setSlide(
+                                            (slide -
+                                                1 +
+                                                Object.keys(item.images)
+                                                    .length) %
+                                                Object.keys(item.images).length
+                                        );
+                                    }}
+                                >
+                                    <ChevronLeft />
+                                </button>
+
+                                {/* Images */}
+
+                                <img
+                                    src={item.images[slide]}
+                                    className={
+                                        "desktop:max-w-[34rem] w-[34rem] rounded "
+                                    }
+                                />
+
+                                {/* Right carousel button */}
+
+                                <button
+                                    className={
+                                        "absolute bottom-[45%] right-0 p-1 " +
+                                        (Object.keys(item.images).length !== 1
+                                            ? ""
+                                            : "hidden")
+                                    }
+                                    onClick={() => {
+                                        setSlide(
+                                            (slide + 1) %
+                                                Object.keys(item.images).length
+                                        );
+                                    }}
+                                >
+                                    <ChevronRight />
+                                </button>
+                            </div>
+                            <div className="flex flex-col h-full">
+                                <div className="flex flex-col">
+                                    <h1 className="desktop:text-3xl text-xl underline">
+                                        {item.title}
+                                    </h1>
+                                    <p>{item.text}</p>
+                                </div>
+                                <div className="flex flex-col">
+                                    <a
+                                        href={item.gitLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-500"
+                                    >
+                                        GitHub
+                                    </a>
+                                    <a
+                                        href={item.siteLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-500"
+                                    >
+                                        Website
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
 
             {/* {projectData.map((item) => {
         return (
