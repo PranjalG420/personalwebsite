@@ -1,4 +1,3 @@
-import React from "react";
 import NextLink from "next/link";
 import {
     Anchor,
@@ -13,7 +12,7 @@ export const CustomButton = ({ children, button_function }) => {
     return (
         <button
             onClick={button_function}
-            className="px-4 py-2 rounded-lg dark:text-black text-zinc-200 bg-zinc-900 dark:bg-zinc-200 font-semibold text-lg tablet:text-xl transition-all hover:translate-x-1"
+            className="px-6 py-2 text-black bg-neutral-100 rounded desktop:text-xl text-base hover:bg-neutral-400 transition-all"
         >
             {children}
         </button>
@@ -22,10 +21,11 @@ export const CustomButton = ({ children, button_function }) => {
 
 export const CustomLink = ({ children, link }) => {
     return (
-        <NextLink href={link}>
-            <a className="px-4 py-2 rounded-lg dark:text-black text-zinc-200 bg-zinc-900 dark:bg-zinc-200 font-semibold text-lg tablet:text-xl transition-all hover:translate-x-1">
-                {children}
-            </a>
+        <NextLink
+            className="px-6 py-2 text-black bg-neutral-100 rounded desktop:text-xl text-base hover:bg-neutral-400 transition-all"
+            href={link}
+        >
+            {children}
         </NextLink>
     );
 };
