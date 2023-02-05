@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../components/container";
 import { getProviders, signIn } from "next-auth/react";
 import { CustomButton } from "../components/smallcomponents";
