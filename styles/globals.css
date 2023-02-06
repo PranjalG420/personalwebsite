@@ -6,8 +6,8 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
 }
 
 a {
@@ -17,51 +17,36 @@ a {
 
 * {
     box-sizing: border-box;
-    font-family: Kanit, sans-serif;
 }
 
-pre {
-    @apply p-4 my-4 border-2 border-blue-500 tablet:text-base text-sm rounded;
+::-webkit-search-cancel-button {
+    -webkit-appearance: none;
 }
 
-.prose img[title="blog-image"] {
-    @apply rounded-md block mx-auto w-[50%] my-4;
+::-webkit-scrollbar {
+    @apply max-w-[12px];
 }
 
-.prose p {
-    @apply tablet:text-base text-sm dark:text-zinc-300 text-zinc-900 font-semibold;
+::-webkit-scrollbar-track {
+    @apply bg-neutral-200;
 }
 
-h3 {
-    @apply tablet:text-4xl font-semibold text-2xl my-2;
+::-webkit-scrollbar-thumb {
+    @apply bg-neutral-400;
 }
 
-h4 {
-    @apply tablet:text-2xl font-semibold text-xl my-2;
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-500;
 }
 
-.default-title {
-    @apply text-2xl tablet:text-4xl font-semibold;
+#signature {
+    stroke-dasharray: 1718;
+    stroke-dashoffset: 1718;
+    animation: signature 5s ease forwards;
 }
 
-.default-text {
-    @apply text-base tablet:text-lg dark:text-zinc-500 text-zinc-700;
-}
-
-.default-subtitle {
-    @apply font-semibold text-xl tablet:text-2xl;
-}
-
-.default-subtitle2 {
-    @apply font-semibold text-base tablet:text-lg;
-}
-
-@media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-    body {
-        color: white;
-        background: var(--background-color);
+@keyframes signature {
+    to {
+        stroke-dashoffset: 0;
     }
 }
