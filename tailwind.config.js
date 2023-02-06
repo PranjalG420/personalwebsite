@@ -5,10 +5,9 @@ module.exports = {
         "./pages/**/*.{js,ts,jsx,tsx}",
         "./components/**/*.{js,ts,jsx,tsx}",
     ],
-    darkMode: "class",
     theme: {
         screens: {
-            tablet: "910px",
+            desktop: "72rem",
             md: "768px",
             sm: "640px",
             lg: "1024px",
@@ -26,8 +25,6 @@ module.exports = {
                 spin: "spin 100s linear infinite",
             },
         },
-        typography: (theme) => ({}),
         extend: {},
     },
-    plugins: [require("@tailwindcss/typography")],
 };

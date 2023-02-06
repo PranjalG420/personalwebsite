@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../components/container";
 import { getProviders, signIn } from "next-auth/react";
 import { CustomButton } from "../components/smallcomponents";
@@ -6,7 +5,7 @@ import Head from "next/head";
 
 export default function signin() {
     return (
-        <Container top="flex-1">
+        <Container>
             <Head>
                 <title>Sign In</title>
             </Head>
