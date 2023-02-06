@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Container from "../components/container";
-import { useSession, signIn } from "next-auth/react";
+import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { GetServerSidePropsContext } from "next";
 import { PrismaClient } from "@prisma/client";
@@ -57,9 +57,18 @@ export default function Guestbook({ data: guestbook }) {
                                 setGuestbookentry(e.target.value);
                             }}
                         ></textarea>
-                        <CustomButton button_function={handleSend}>
-                            Submit
-                        </CustomButton>
+                        <div className="flex gap-2">
+                            <CustomButton button_function={handleSend}>
+                                Submit
+                            </CustomButton>
+                            <CustomButton
+                                button_function={() => {
+                                    signOut();
+                                }}
+                            >
+                                Sign out
+                            </CustomButton>
+                        </div>
                     </>
                 )) || (
                     <>
