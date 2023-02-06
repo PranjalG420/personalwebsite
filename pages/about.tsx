@@ -11,7 +11,7 @@ export default function Projects() {
             <Head>
                 <title>About</title>
             </Head>
-            <div className="flex flex-row items-center justify-center">
+            <div className="flex desktop:flex-row flex-col items-center justify-center">
                 <div className="flex flex-col">
                     <h1 className="desktop:text-4xl text-2xl font-semibold mb-2">
                         Who am I?
@@ -26,7 +26,7 @@ export default function Projects() {
                         look no further!
                     </p>
                 </div>
-                <div className="flex flex-row items-center justify-center gap-2">
+                <div className="flex flex-row items-center justify-center gap-2 desktop:mt-0 mt-8">
                     <svg
                         width="209"
                         height="98"
@@ -54,13 +54,13 @@ export default function Projects() {
             <h1 className="desktop:text-4xl text-2xl font-semibold mt-8">
                 My Projects
             </h1>
-            <div className="flex flex-row flex-wrap justify-around items-center mt-4 border-t-2">
+            <div className="flex flex-row flex-wrap justify-around items-center mt-4 border-t-2 border-neutral-600">
                 {projectData.map((item) => {
                     const [slide, setSlide] = useState<number>(0);
                     return (
                         <div
                             key={item.id}
-                            className="flex desktop:flex-row flex-col items-start gap-2 border-b-2 py-6"
+                            className="flex desktop:flex-row flex-col items-start gap-2 border-b-2 border-neutral-600 py-6"
                         >
                             <div className="relative">
                                 {/* Left carousel button */}
@@ -87,17 +87,19 @@ export default function Projects() {
 
                                 {/* Images */}
 
-                                <img
+                                {/* <img
                                     src={item.images[slide]}
                                     className={
                                         "desktop:max-w-[34rem] w-[34rem] rounded "
                                     }
-                                />
-                                {/* <Image
+                                /> */}
+                                <Image
                                     src={item.images[slide]}
                                     alt="image not found"
-                                    fill={true}
-                                /> */}
+                                    width={1600}
+                                    height={900}
+                                    className="object-cover desktop:max-w-[34rem] max-h-64"
+                                />
 
                                 {/* Right carousel button */}
 
