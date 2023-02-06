@@ -42,7 +42,7 @@ a {
 #signature {
     stroke-dasharray: 1718;
     stroke-dashoffset: 1718;
-    animation: signature 3s ease forwards;
+    animation: signature 5s ease forwards;
 }
 
 @keyframes signature {
