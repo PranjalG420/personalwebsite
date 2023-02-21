@@ -10,6 +10,11 @@ export default function MyApp({
     return (
         <SessionProvider session={session}>
             <Head>
+                <meta
+                    property="og:image"
+                    content="/GitHub-Social-Preview.png"
+                />
+                <meta name="twitter:card" content="summary_large_image" />
                 <link rel="icon" href="/pglogo.png" />
             </Head>
             <ThemeProvider attribute="class">
