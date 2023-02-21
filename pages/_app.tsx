@@ -23,7 +23,7 @@ export default function MyApp({
                 <meta property="og:description" content="" />
                 <meta
                     property="og:image"
-                    content="/GitHub-Social-Preview.png"
+                    content="https://pranjalg420.vercel.app/GitHub-Social-Preview.png"
                 />
 
                 <meta property="twitter:card" content="summary_large_image" />
@@ -35,7 +35,7 @@ export default function MyApp({
                 <meta property="twitter:description" content="" />
                 <meta
                     property="twitter:image"
-                    content="/GitHub-Social-Preview.png"
+                    content="https://pranjalg420.vercel.app/GitHub-Social-Preview.png"
                 />
             </Head>
             <ThemeProvider attribute="class">
