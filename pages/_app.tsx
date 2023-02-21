@@ -10,12 +10,33 @@ export default function MyApp({
     return (
         <SessionProvider session={session}>
             <Head>
+                <title>Pranjal Gupta</title>
+                <meta name="title" content="Pranjal Gupta" />
+                <meta name="description" content="" />
+
+                <meta property="og:type" content="website" />
+                <meta
+                    property="og:url"
+                    content="https://pranjalg420.vercel.app/"
+                />
+                <meta property="og:title" content="Pranjal Gupta" />
+                <meta property="og:description" content="" />
                 <meta
                     property="og:image"
                     content="/GitHub-Social-Preview.png"
                 />
-                <meta name="twitter:card" content="summary_large_image" />
-                <link rel="icon" href="/pglogo.png" />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta
+                    property="twitter:url"
+                    content="https://pranjalg420.vercel.app/"
+                />
+                <meta property="twitter:title" content="Pranjal Gupta" />
+                <meta property="twitter:description" content="" />
+                <meta
+                    property="twitter:image"
+                    content="/GitHub-Social-Preview.png"
+                />
             </Head>
             <ThemeProvider attribute="class">
                 <Component {...pageProps} />
