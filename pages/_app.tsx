@@ -13,6 +13,7 @@ export default function MyApp({
                 <title>Pranjal Gupta</title>
                 <meta name="title" content="Pranjal Gupta" />
                 <meta name="description" content="" />
+                <link rel="icon" href="/favicon.ico" />
 
                 <meta property="og:type" content="website" />
                 <meta
