@@ -21,10 +21,11 @@ module.exports = {
                 serif: ["Roboto Condensed", "serif"],
                 mono: ["Roboto Mono", "monospace"],
             },
-            animation: {
-                spin: "spin 100s linear infinite",
-            },
         },
+
+        extend: {},
+    },
+    variants: {
         extend: {},
     },
 };
