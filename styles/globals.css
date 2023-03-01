@@ -39,6 +39,18 @@ a {
     @apply bg-neutral-500;
 }
 
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        scale: 1 1.5;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 #signature {
     stroke-dasharray: 1718;
     stroke-dashoffset: 1718;

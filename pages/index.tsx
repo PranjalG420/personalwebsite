@@ -1,6 +1,7 @@
 import Container from "../components/container";
 import Head from "next/head";
 import { useMix } from "@pranjalg420/usemix";
+import { useState } from "react";
 
 export default function Home() {
     const [github, playGithub] = useMix({
