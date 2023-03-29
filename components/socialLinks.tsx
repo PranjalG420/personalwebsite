@@ -1,73 +1,100 @@
-import { GitHub, Linkedin, Twitter, Mail, BookOpen } from "react-feather";
+import {
+    GitHub,
+    Linkedin,
+    Twitter,
+    Mail,
+    BookOpen,
+    FileText,
+} from "react-feather";
+
+function IconBlock({ Icon }) {
+    return (
+        <span className="p-2">
+            <Icon />
+        </span>
+    );
+}
+
+const socials = [
+    {
+        key: 1,
+        name: "GitHub",
+        primaryColor: "bg-slate-800",
+        secondaryColor: "bg-slate-700",
+        icon: GitHub,
+        link: "https://github.com/pranjalg420",
+    },
+    {
+        key: 2,
+        name: "LinkedIn",
+        primaryColor: "bg-blue-900",
+        secondaryColor: "bg-blue-800",
+        icon: Linkedin,
+        link: "https://www.linkedin.com/in/pranjal-gupta-10a595224/",
+    },
+    {
+        key: 3,
+        name: "E-Mail",
+        primaryColor: "bg-red-900",
+        secondaryColor: "bg-red-800",
+        icon: Mail,
+        link: "mailto:pranjalg1122@gmail.com",
+    },
+    {
+        key: 4,
+        name: "Twitter",
+        primaryColor: "bg-sky-900",
+        secondaryColor: "bg-sky-800",
+        icon: Twitter,
+        link: "https://twitter.com/pranjalg420",
+    },
+    {
+        key: 5,
+        name: "Blog",
+        primaryColor: "bg-slate-700",
+        secondaryColor: "bg-slate-600",
+        icon: BookOpen,
+        link: "https://pranjalg420blog.vercel.app",
+    },
+    {
+        key: 6,
+        name: "Resume",
+        primaryColor: "bg-green-800",
+        secondaryColor: "bg-green-700",
+        icon: FileText,
+        link: "/#",
+    },
+];
 
 export default function SocialLinks() {
     return (
-        <div className="w-full items-center justify-center flex flex-row gap-6 flex-wrap">
-            <a
-                href="https://github.com/pranjalg420"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-row items-center gap-0 bg-stone-800 rounded hover:translate-x-1 transition-all min-w-[10rem] text-center"
-            >
-                <span className="px-4 py-2">
-                    <GitHub />
-                </span>
-                <p className="bg-stone-700 w-full px-6 py-4 rounded-r desktop:text-lg text-base">
-                    GitHub
-                </p>
-            </a>
-            <a
-                href="https://www.linkedin.com/in/pranjal-gupta-10a595224/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-row items-center gap-0 bg-blue-900 rounded hover:translate-x-1 transition-all min-w-[10rem] text-center"
-            >
-                <span className="px-4 py-2">
-                    <Linkedin />
-                </span>
-                <p className="bg-blue-800 w-full px-6 py-4 rounded-r desktop:text-lg text-base">
-                    LinkedIn
-                </p>
-            </a>
-            <a
-                href="mailto:pranjalg1122@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-row items-center gap-0 bg-red-900 rounded hover:translate-x-1 transition-all min-w-[10rem] text-center"
-            >
-                <span className="px-4 py-2">
-                    <Mail />
-                </span>
-                <p className="bg-red-800 w-full px-6 py-4 rounded-r desktop:text-lg text-base">
-                    E-Mail
-                </p>
-            </a>
-            <a
-                href="https://twitter.com/PranjalG420"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-row items-center gap-0 bg-sky-900 rounded hover:translate-x-1 transition-all min-w-[10rem] text-center"
-            >
-                <span className="px-4 py-2">
-                    <Twitter />
-                </span>
-                <p className="bg-sky-800 w-full px-6 py-4 rounded-r desktop:text-lg text-base">
-                    Twitter
-                </p>
-            </a>
-            <a
-                href="https://twitter.com/PranjalG420"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-row items-center gap-0 bg-slate-700 rounded hover:translate-x-1 transition-all min-w-[10rem] text-center"
-            >
-                <span className="px-4 py-2">
-                    <BookOpen />
-                </span>
-                <p className="bg-slate-600 w-full px-6 py-4 rounded-r desktop:text-lg text-base">
-                    Blog
-                </p>
-            </a>
+        <div className="w-full items-center justify-center flex flex-row sm:gap-6 gap-2 flex-wrap text-white">
+            {socials.map(
+                ({ key, name, primaryColor, secondaryColor, icon, link }) => {
+                    return (
+                        <a
+                            key={key}
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={
+                                "flex flex-row items-center mobile:w-auto w-full rounded hover:translate-x-1 transition-all min-w-[10rem] text-center  " +
+                                primaryColor
+                            }
+                        >
+                            <IconBlock Icon={icon} />
+                            <p
+                                className={
+                                    "w-full px-6 py-4 rounded-r desktop:text-lg text-base " +
+                                    secondaryColor
+                                }
+                            >
+                                {name}
+                            </p>
+                        </a>
+                    );
+                }
+            )}
         </div>
     );
 }
