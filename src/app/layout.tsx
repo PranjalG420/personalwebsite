@@ -1,13 +1,12 @@
 import "../../styles/globals.css";
 import Navbar from "../../components/navbar";
-import {  Roboto } from "next/font/google";
+import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
     subsets: ["latin"],
     display: "swap",
     weight: ["400"],
 });
-
 
 export default function RootLayout({ children }) {
     return (
@@ -37,7 +36,7 @@ export default function RootLayout({ children }) {
             />
             <body
                 className={
-                    "flex flex-col justify-start min-h-screen max-w-[72rem] px-2 w-full mx-auto bg-neutral-950 text-neutral-100 " +
+                    "flex flex-col justify-start min-h-screen max-w-[72rem] px-4 w-full mx-auto bg-neutral-900 text-neutral-100 " +
                     roboto.className
                 }
             >
