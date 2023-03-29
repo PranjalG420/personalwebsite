@@ -1,40 +1,24 @@
 "use client";
 
 import { useMix } from "@pranjalg420/usemix";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import { GitHub, Linkedin, Twitter, Mail } from "react-feather";
+import { Roboto_Mono } from "next/font/google";
+
+const roboto_mono = Roboto_Mono({
+    subsets: ["latin"],
+    display: "swap",
+    weight: ["400", "600", "700"],
+});
 
 export default function Home() {
     const names = [
         "Web Developer",
         "Problem-Solver",
-        "Great Learner",
+        "Quick Learner",
         "UI/UX Designer",
     ];
     const [rolesIndex, setRolesIndex] = useState<number>(0);
-    const [github, playGithub] = useMix({
-        entry: "GitHub",
-        tick: 2,
-        delay: 50,
-        upper: true,
-    });
-    const [linkedin, playLinkedin] = useMix({
-        entry: "Linkedin",
-        tick: 2,
-        delay: 50,
-        upper: true,
-    });
-    const [twitter, playTwitter] = useMix({
-        entry: "Twitter",
-        tick: 2,
-        delay: 50,
-        upper: true,
-    });
-    const [mail, playMail] = useMix({
-        entry: "Mail",
-        tick: 2,
-        delay: 50,
-        upper: true,
-    });
 
     const [rolesMix] = useMix({
         entry: names[rolesIndex],
@@ -46,7 +30,7 @@ export default function Home() {
     useEffect(() => {
         const interval = setInterval(() => {
             setRolesIndex((rolesIndex + 1) % names.length);
-        }, 5000);
+        }, 3500);
 
         return () => clearInterval(interval);
     }, [rolesMix]);
@@ -54,8 +38,84 @@ export default function Home() {
     return (
         <main>
             <title>Pranjal Gupta | Web Developer</title>
-            <div className="h-[90vh] border-2 w-full">awdawd</div>
-            <div className="h-[90vh] border-2 w-full" id="about">
+            <div className="h-[95vh] w-full gap-6 flex flex-col justify-center">
+                <div className="flex desktop:flex-row flex-col gap-6 desktop:items-center items-start justify-center">
+                    <img
+                        src="https://avatars.githubusercontent.com/u/95481637?v=4"
+                        className="rounded-full desktop:h-40 h-20"
+                    />
+                    <div className="flex flex-col gap-2">
+                        <p className="desktop:text-4xl text-2xl font-semibold">
+                            Pranjal Gupta
+                        </p>
+                        <p className={"desktop:text-2xl text-lg italic text-neutral-400 " + roboto_mono.className}>
+                            {rolesMix}
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Impedit ex expedita temporibus dolore sapiente
+                            provident aliquam molestias eum aliquid repudiandae,
+                            sit exercitationem ullam explicabo quos nam. Sint et
+                            eaque doloribus.
+                        </p>
+                    </div>
+                </div>
+                <div className="w-full items-center justify-center flex flex-row gap-6 flex-wrap">
+                    <a
+                        href="https://github.com/pranjalg420"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-row items-center gap-0 bg-stone-800 rounded hover:translate-x-1 transition-all"
+                    >
+                        <span className="px-4 py-2">
+                            <GitHub />
+                        </span>
+                        <p className="bg-stone-700 w-full px-6 py-4 rounded-r desktop:text-lg text-base">
+                            GitHub
+                        </p>
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/pranjal-gupta-10a595224/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-row items-center gap-0 bg-blue-900 rounded hover:translate-x-1 transition-all"
+                    >
+                        <span className="px-4 py-2">
+                            <Linkedin />
+                        </span>
+                        <p className="bg-blue-800 w-full px-6 py-4 rounded-r desktop:text-lg text-base">
+                            LinkedIn
+                        </p>
+                    </a>
+                    <a
+                        href="mailto:pranjalg1122@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-row items-center gap-0 bg-red-900 rounded hover:translate-x-1 transition-all"
+                    >
+                        <span className="px-4 py-2">
+                            <Mail />
+                        </span>
+                        <p className="bg-red-800 w-full px-6 py-4 rounded-r desktop:text-lg text-base">
+                            E-Mail
+                        </p>
+                    </a>
+                    <a
+                        href="https://twitter.com/PranjalG420"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-row items-center gap-0 bg-sky-900 rounded hover:translate-x-1 transition-all"
+                    >
+                        <span className="px-4 py-2">
+                            <Twitter />
+                        </span>
+                        <p className="bg-sky-800 w-full px-6 py-4 rounded-r desktop:text-lg text-base">
+                            Twitter
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div className="h-[100vh] border-2 w-full" id="about">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Accusantium earum, nihil a obcaecati incidunt, neque quae
                 possimus facilis maxime ut fugit quidem doloribus impedit

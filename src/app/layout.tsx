@@ -1,5 +1,12 @@
 import "../../styles/globals.css";
-import fs from "node:fs";
+import Navbar from "../../components/navbar";
+import {  Roboto } from "next/font/google";
+
+const roboto = Roboto({
+    subsets: ["latin"],
+    display: "swap",
+    weight: ["400"],
+});
 
 
 export default function RootLayout({ children }) {
@@ -28,11 +35,14 @@ export default function RootLayout({ children }) {
                 property="twitter:image"
                 content="https://pranjalg420.vercel.app/GitHub-Social-Preview.png"
             />
-            <body className="flex flex-col mx-auto justify-start h-full min-h-screen bg-red-900 text-red-500 font-sans w-[72rem]">
-                {/* <Navbar /> */}
-                <div className="flex flex-col mx-auto h-full justify-center flex-1 px-0">
-                    {children}
-                </div>
+            <body
+                className={
+                    "flex flex-col justify-start min-h-screen max-w-[72rem] px-2 w-full mx-auto bg-neutral-950 text-neutral-100 " +
+                    roboto.className
+                }
+            >
+                <Navbar />
+                {children}
             </body>
         </html>
     );
