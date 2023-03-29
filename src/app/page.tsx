@@ -4,6 +4,7 @@ import { useMix } from "@pranjalg420/usemix";
 import { useEffect, useState } from "react";
 import { Roboto_Mono } from "next/font/google";
 import SocialLinks from "../../components/socialLinks";
+import Projects from "../../components/projects";
 
 const roboto_mono = Roboto_Mono({
     subsets: ["latin"],
@@ -38,30 +39,30 @@ export default function Home() {
     return (
         <main>
             <title>Pranjal Gupta | Web Developer</title>
-            <div className="h-[95vh] w-full gap-6 flex flex-col justify-center">
-                <div className="flex desktop:flex-row flex-col gap-6 desktop:items-center items-start justify-center">
+            <div className="h-[92vh] w-full gap-6 flex flex-col justify-center">
+                <div className="flex sm:flex-row flex-col gap-4 desktop:items-center items-start justify-center">
                     <img
                         src="https://avatars.githubusercontent.com/u/95481637?v=4"
-                        className="rounded-full desktop:h-40 h-20"
+                        className="rounded-full desktop:h-50 h-28"
                     />
-                    <div className="flex flex-col gap-2">
-                        <p className="desktop:text-4xl text-2xl font-semibold">
+                    <div className="flex flex-col sm:gap-2">
+                        <p className="desktop:text-6xl text-2xl font-semibold">
                             Pranjal Gupta
                         </p>
                         <p
                             className={
-                                "desktop:text-2xl text-lg italic text-neutral-400 " +
+                                "desktop:text-2xl text-lg italic text-neutral-500 " +
                                 roboto_mono.className
                             }
                         >
                             {rolesMix}
                         </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Impedit ex expedita temporibus dolore sapiente
-                            provident aliquam molestias eum aliquid repudiandae,
-                            sit exercitationem ullam explicabo quos nam. Sint et
-                            eaque doloribus.
+                        <p className="desktop:text-xl text-base">
+                            An aspiring web developer from India who loves
+                            everything about programming. Proficient in
+                            JavaScript, TypeScript, React, Next.js, Node.js,
+                            Express.js. I also have experience in UI/UX design
+                            and graphic design.
                         </p>
                     </div>
                 </div>
@@ -76,6 +77,12 @@ export default function Home() {
                 voluptas voluptatibus culpa rerum, similique accusantium maxime
                 odio nostrum blanditiis ipsam. Et esse nulla dignissimos minus
                 ad placeat.
+            </div>
+            <div
+                className="h-[200vh] flex flex-col justify-start py-[8vh]"
+                id="projects"
+            >
+                <Projects />
             </div>
         </main>
     );
