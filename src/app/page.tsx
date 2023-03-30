@@ -40,13 +40,13 @@ export default function Home() {
         <main>
             <title>Pranjal Gupta | Web Developer</title>
             <div className="h-[92vh] w-full gap-6 flex flex-col justify-center">
-                <div className="flex sm:flex-row flex-col gap-4 desktop:items-center items-start justify-center">
+                <div className="flex sm:flex-row flex-col gap-4 sm:items-center items-start justify-center">
                     <img
                         src="https://avatars.githubusercontent.com/u/95481637?v=4"
                         className="rounded-full desktop:h-50 h-28"
                     />
-                    <div className="flex flex-col sm:gap-2">
-                        <p className="desktop:text-6xl text-2xl font-semibold">
+                    <div className="flex flex-col sm:gap-1">
+                        <p className="desktop:text-4xl text-2xl font-semibold">
                             Pranjal Gupta
                         </p>
                         <p
@@ -68,18 +68,14 @@ export default function Home() {
                 </div>
                 <SocialLinks />
             </div>
-            <div className="h-[100vh] flex flex-col justify-center" id="about">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Accusantium earum, nihil a obcaecati incidunt, neque quae
-                possimus facilis maxime ut fugit quidem doloribus impedit
-                commodi assumenda qui dicta optio aperiam. Repellat earum error
-                ipsa, autem iusto ut quis veniam doloribus, ipsum quidem
-                voluptas voluptatibus culpa rerum, similique accusantium maxime
-                odio nostrum blanditiis ipsam. Et esse nulla dignissimos minus
-                ad placeat.
+            <div
+                className="min-h-[100vh] flex flex-col justify-center"
+                id="about"
+            >
+                about
             </div>
             <div
-                className="h-[200vh] flex flex-col justify-start py-[8vh]"
+                className="min-h-[100vh] flex flex-col justify-start pt-[8vh]"
                 id="projects"
             >
                 <Projects />

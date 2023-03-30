@@ -6,14 +6,7 @@ import {
     BookOpen,
     FileText,
 } from "react-feather";
-
-function IconBlock({ Icon }) {
-    return (
-        <span className="p-2">
-            <Icon />
-        </span>
-    );
-}
+import { IconBlock } from "./iconblock";
 
 const socials = [
     {
@@ -68,7 +61,7 @@ const socials = [
 
 export default function SocialLinks() {
     return (
-        <div className="w-full items-center justify-center flex flex-row sm:gap-6 gap-2 flex-wrap text-white">
+        <div className="w-full items-center justify-center flex flex-row sm:gap-4 gap-2 flex-wrap text-white">
             {socials.map(
                 ({ key, name, primaryColor, secondaryColor, icon, link }) => {
                     return (
