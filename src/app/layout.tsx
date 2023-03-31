@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
             />
             <body
                 className={
-                    "flex flex-col justify-start min-h-screen max-w-[72rem] px-4 w-full mx-auto bg-neutral-900 text-neutral-100 " +
+                    "flex flex-col justify-start min-h-screen max-w-[72rem] px-4 w-full mx-auto bg-neutral-900 text-neutral-100 pb-12 " +
                     roboto.className
                 }
             >
