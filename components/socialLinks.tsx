@@ -61,7 +61,7 @@ const socials = [
 
 export default function SocialLinks() {
     return (
-        <div className="w-full items-center justify-between flex flex-row flex-wrap text-white">
+        <div className="w-full items-center justify-center md:gap-4 gap-2 flex flex-row flex-wrap text-white">
             {socials.map(
                 ({ key, name, primaryColor, secondaryColor, icon, link }) => {
                     return (
@@ -71,7 +71,7 @@ export default function SocialLinks() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className={
-                                "flex flex-row items-center mobile:w-auto w-full my-2 rounded hover:-translate-y-1 transition-all min-w-[10rem] text-center " +
+                                "flex flex-row items-center mobile:w-auto w-full rounded hover:-translate-y-1 transition-all min-w-[10rem] text-center " +
                                 primaryColor
                             }
                         >
