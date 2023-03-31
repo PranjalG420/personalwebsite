@@ -44,7 +44,7 @@ export default function Home() {
                 <div className="flex sm:flex-row flex-col gap-4 sm:items-center items-start justify-center">
                     <img
                         src="https://avatars.githubusercontent.com/u/95481637?v=4"
-                        className="rounded-full desktop:h-50 h-28"
+                        className="rounded-full desktop:h-40 h-28"
                     />
                     <div className="flex flex-col sm:gap-1">
                         <p className="desktop:text-4xl text-2xl font-semibold">
