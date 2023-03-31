@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Roboto_Mono } from "next/font/google";
 import SocialLinks from "../../components/socialLinks";
 import Projects from "../../components/projects";
+import About from "../../components/about";
 
 const roboto_mono = Roboto_Mono({
     subsets: ["latin"],
@@ -31,7 +32,7 @@ export default function Home() {
     useEffect(() => {
         const interval = setInterval(() => {
             setRolesIndex((rolesIndex + 1) % names.length);
-        }, 3500);
+        }, 2500);
 
         return () => clearInterval(interval);
     }, [rolesMix]);
@@ -69,10 +70,10 @@ export default function Home() {
                 <SocialLinks />
             </div>
             <div
-                className="min-h-[100vh] flex flex-col justify-center"
+                className="min-h-[100vh] flex flex-col justify-start pt-[8vh]"
                 id="about"
             >
-                about
+                <About />
             </div>
             <div
                 className="min-h-[100vh] flex flex-col justify-start pt-[8vh]"
