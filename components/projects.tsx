@@ -16,7 +16,7 @@ const projects = [
             "TypeScript",
             "Express",
             "NodeJs",
-            "PostGRESQL",
+            "PostgreSQL",
             "Prisma",
         ],
         imgSource: "/appnote.png",
@@ -40,6 +40,16 @@ const projects = [
         gitLink: "https://github.com/pranjalg420/swiftsongs",
         tags: ["React", "Tailwind CSS", "Javascript"],
         imgSource: "/swiftsongs.png",
+    },
+    {
+        key: 4,
+        title: "useMix",
+        description:
+            "A custom React hook for creating a cool letter mixing effect.",
+        link: "https://www.npmjs.com/package/@pranjalg420/usemix",
+        gitLink: "https://github.com/pranjalg420/usemix",
+        tags: ["React", "Typescript", "npm"],
+        imgSource: "/usemix.png",
     },
 ];
 
@@ -97,7 +107,7 @@ export default function Projects() {
                                         href={link}
                                         rel="noopener noreferrer"
                                         target="_blank"
-                                        className="flex flex-row items-center w-auto rounded hover:translate-x-1 transition-all min-w-[6rem] text-center bg-indigo-800"
+                                        className="flex flex-row items-center w-auto rounded hover:-translate-y-1 transition-all min-w-[6rem] text-center bg-indigo-800"
                                     >
                                         <IconBlock Icon={Link} />
                                         <p className="w-full px-4 py-3 rounded-r text-sm bg-indigo-700">
@@ -108,7 +118,7 @@ export default function Projects() {
                                         href={gitLink}
                                         rel="noopener noreferrer"
                                         target="_blank"
-                                        className="flex flex-row items-center w-auto rounded hover:translate-x-1 transition-all min-w-[6rem] text-center bg-slate-800"
+                                        className="flex flex-row items-center w-auto rounded hover:-translate-y-1 transition-all min-w-[6rem] text-center bg-slate-800"
                                     >
                                         <IconBlock Icon={GitBranch} />
                                         <p className="w-full px-4 py-3 rounded-r text-sm bg-slate-700">
