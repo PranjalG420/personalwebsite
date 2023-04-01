@@ -6,10 +6,8 @@ html,
 body {
     padding: 0;
     margin: 0;
-    /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+    scroll-behavior: smooth;
 }
-
 a {
     color: inherit;
     text-decoration: none;
@@ -37,6 +35,18 @@ a {
 
 ::-webkit-scrollbar-thumb:hover {
     @apply bg-neutral-500;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        scale: 1 1.5;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 #signature {
