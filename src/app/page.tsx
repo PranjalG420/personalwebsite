@@ -40,7 +40,7 @@ export default function Home() {
     return (
         <main>
             <title>Pranjal Gupta | Web Developer</title>
-            <div className="h-[92vh] w-full gap-6 flex flex-col justify-center">
+            <div className="min-h-[92vh] w-full gap-6 flex flex-col justify-center">
                 <div className="flex sm:flex-row flex-col gap-4 sm:items-center items-start justify-center">
                     <img
                         src="https://avatars.githubusercontent.com/u/95481637?v=4"
