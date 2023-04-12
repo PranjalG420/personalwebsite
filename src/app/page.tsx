@@ -59,7 +59,7 @@ export default function Home() {
                             {rolesMix}
                         </p>
                         <p className="desktop:text-xl text-base">
-                            An aspiring web developer from India who loves
+                            A web developer from India who loves
                             everything about programming. Proficient in
                             JavaScript, TypeScript, React, Next.js, Node.js,
                             Express.js. I also have experience in UI/UX design
