@@ -59,11 +59,11 @@ export default function Home() {
                             {rolesMix}
                         </p>
                         <p className="desktop:text-xl text-base">
-                            A web developer from India who loves
-                            everything about programming. Proficient in
-                            JavaScript, TypeScript, React, Next.js, Node.js,
-                            Express.js. I also have experience in UI/UX design
-                            and graphic design.
+                            A web developer from India who loves everything
+                            about programming. Proficient in JavaScript,
+                            TypeScript, React, Next.js, Node.js, Express.js. I
+                            also have experience in UI/UX design and graphic
+                            design.
                         </p>
                     </div>
                 </div>
