@@ -55,7 +55,7 @@ const socials = [
         primaryColor: "bg-green-800",
         secondaryColor: "bg-green-700",
         icon: FileText,
-        link: "/#",
+        link: "./Pranjal_Gupta_Resume.pdf",
     },
 ];
 
