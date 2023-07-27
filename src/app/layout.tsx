@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
                 }
             >
                 <Navbar />
-                <div className="flex flex-col justify-start min-h-screen max-w-[72rem] px-4 w-full mx-auto pb-12 ">
+                <div className="flex flex-col justify-start min-h-screen max-w-6xl desktop:px-2 px-4 w-full mx-auto pb-12 ">
                     {children}
                 </div>
             </body>

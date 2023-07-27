@@ -22,19 +22,20 @@ a {
 }
 
 ::-webkit-scrollbar {
-    @apply max-w-[12px];
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    @apply bg-neutral-200;
+    background-color: #171717;
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-neutral-400;
+    background-color: #262626;
+    border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    @apply bg-neutral-500;
+    background-color: #404040;
 }
 
 @keyframes wiggle {
