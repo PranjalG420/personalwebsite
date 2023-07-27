@@ -56,7 +56,7 @@ const projects = [
 export default function Projects() {
     return (
         <>
-            <p className="desktop:text-6xl text-3xl mb-4 font-semibold">
+            <p className="desktop:text-6xl text-3xl mb-4 font-medium">
                 Projects
             </p>
             <div className="w-full h-full flex flex-col gap-16">
@@ -75,7 +75,7 @@ export default function Projects() {
                                 key={key}
                                 className="flex flex-col items-start gap-3"
                             >
-                                <p className="desktop:text-2xl font-semibold text-xl">
+                                <p className="desktop:text-2xl font-medium text-xl">
                                     {title}
                                 </p>
                                 <p className="desktop:text-lg text-base">

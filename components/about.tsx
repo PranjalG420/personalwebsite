@@ -1,7 +1,7 @@
 export default function About() {
     return (
         <>
-            <p className="desktop:text-6xl text-3xl mb-4 font-semibold">
+            <p className="desktop:text-6xl text-3xl mb-4 font-medium">
                 About
             </p>
             <div className="desktop:text-xl text-lg flex flex-col gap-6">

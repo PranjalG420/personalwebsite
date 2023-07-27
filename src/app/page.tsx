@@ -47,7 +47,7 @@ export default function Home() {
                         className="rounded-full desktop:h-40 h-28"
                     />
                     <div className="flex flex-col sm:gap-1">
-                        <p className="desktop:text-4xl text-2xl font-semibold">
+                        <p className="desktop:text-4xl text-2xl font-medium">
                             Pranjal Gupta
                         </p>
                         <p
