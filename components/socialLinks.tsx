@@ -44,8 +44,8 @@ const socials = [
     {
         key: 5,
         name: "Blog",
-        primaryColor: "bg-slate-900",
-        secondaryColor: "bg-slate-800",
+        primaryColor: "bg-neutral-950",
+        secondaryColor: "bg-neutral-800",
         icon: BookOpen,
         link: "https://pranjalg420blog.vercel.app",
     },
