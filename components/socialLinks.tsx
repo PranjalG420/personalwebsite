@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
     GitHub,
     Linkedin,
@@ -35,9 +36,9 @@ const socials = [
     },
     {
         key: 4,
-        name: "Twitter",
-        primaryColor: "bg-sky-900",
-        secondaryColor: "bg-sky-800",
+        name: "X/Twitter",
+        primaryColor: "bg-sky-950",
+        secondaryColor: "bg-sky-900",
         icon: Twitter,
         link: "https://twitter.com/pranjalg420",
     },
@@ -75,7 +76,14 @@ export default function SocialLinks() {
                                 primaryColor
                             }
                         >
-                            <IconBlock Icon={icon} />
+                            {(icon != Twitter && <IconBlock Icon={icon} />) || (
+                                <Image
+                                    src="/twitter.png"
+                                    alt=""
+                                    width={40}
+                                    height={36}
+                                />
+                            )}
                             <p
                                 className={
                                     "w-full px-6 py-4 rounded-r desktop:text-lg text-base " +
