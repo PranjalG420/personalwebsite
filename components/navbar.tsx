@@ -4,19 +4,19 @@ export default function Navbar() {
             <div className="flex flex-row justify-start w-full gap-2 desktop:text-lg text-base items-center py-2 max-w-6xl">
                 <a
                     href="/#"
-                    className="px-2 py-1 hover:bg-neutral-700 transition-colors"
+                    className="px-2 py-1 hover:bg-neutral-800 transition-colors rounded-sm"
                 >
                     Home
                 </a>
                 <a
                     href="#about"
-                    className="px-2 py-1 hover:bg-neutral-700 transition-colors"
+                    className="px-2 py-1 hover:bg-neutral-800 transition-colors rounded-sm"
                 >
                     About
                 </a>
                 <a
                     href="#projects"
-                    className="px-2 py-1 hover:bg-neutral-700 transition-colors"
+                    className="px-2 py-1 hover:bg-neutral-800 transition-colors rounded-sm"
                 >
                     Projects
                 </a>
