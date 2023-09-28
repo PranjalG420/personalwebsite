@@ -19,6 +19,8 @@ export default function Home() {
         "Problem-Solver",
         "Quick Learner",
         "UI/UX Designer",
+        "Jeneous",
+        "Hax0r"
     ];
     const [rolesIndex, setRolesIndex] = useState<number>(0);
 
@@ -43,7 +45,7 @@ export default function Home() {
             <div className="min-h-[92vh] w-full gap-6 flex flex-col justify-center">
                 <div className="flex sm:flex-row flex-col gap-4 sm:items-center items-start justify-center">
                     <img
-                        src="https://avatars.githubusercontent.com/u/95481637?v=4"
+                        src="https://github.com/pranjalg420.png"
                         className="rounded-full desktop:h-40 h-28"
                     />
                     <div className="flex flex-col sm:gap-1">
@@ -60,10 +62,8 @@ export default function Home() {
                         </p>
                         <p className="desktop:text-xl text-base">
                             A web developer from India who loves everything
-                            about programming. Proficient in JavaScript,
-                            TypeScript, React, Next.js, Node.js, Express.js. I
-                            also have experience in UI/UX design and graphic
-                            design.
+                            about programming. Proficient in TypeScript, React, Next.js, Node.js, Express.js. I
+                            also have experience in UI/UX design and graphic design.
                         </p>
                     </div>
                 </div>
