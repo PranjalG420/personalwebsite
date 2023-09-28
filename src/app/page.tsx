@@ -19,8 +19,8 @@ export default function Home() {
         "Problem-Solver",
         "Quick Learner",
         "UI/UX Designer",
-        "Jeneous",
-        "Hax0r"
+        "Tech Guru",
+        "Hacker"
     ];
     const [rolesIndex, setRolesIndex] = useState<number>(0);
 
