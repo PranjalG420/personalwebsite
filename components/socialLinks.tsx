@@ -14,13 +14,13 @@ const socials = [
         key: 1,
         name: "GitHub",
         icon: GitHub,
-        link: "https://github.com/pranjalg420",
+        link: "https://github.com/PranjalG1122",
     },
     {
         key: 2,
         name: "LinkedIn",
         icon: Linkedin,
-        link: "https://www.linkedin.com/in/pranjal-gupta-10a595224/",
+        link: "https://www.linkedin.com/in/pranjalg1122/",
     },
     {
         key: 3,
@@ -32,13 +32,13 @@ const socials = [
         key: 4,
         name: "Twitter",
         icon: Twitter,
-        link: "https://twitter.com/pranjalg420",
+        link: "https://twitter.com/pranjalg1122",
     },
     {
         key: 5,
         name: "Blog",
         icon: BookOpen,
-        link: "https://pranjalg420blog.vercel.app",
+        link: "https://pranjalg1122blog.vercel.app/",
     },
     {
         key: 6,
