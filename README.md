@@ -1,6 +1,6 @@
 ## This is my personal website and blog.
 
-Check it out: [pranjalg420.vercel.app](https://pranjalg420.vercel.app)
+Check it out: [pranjalg1122.vercel.app](https://pranjalg1122.vercel.app/)
 
 #### Built Using:
 
