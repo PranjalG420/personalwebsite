@@ -43,7 +43,7 @@ const projects = [
         title: "useMix",
         description:
             "A custom React hook for creating a cool letter mixing effect.",
-        link: "https://www.npmjs.com/package/@pranjalg420/usemix",
+        link: "https://www.npmjs.com/package/@pranjalg1122/usemix",
         tags: ["React", "Typescript", "npm"],
         imgSource: "/usemix.png",
     },
