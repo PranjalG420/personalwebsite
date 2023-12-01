@@ -1,6 +1,6 @@
 "use client";
 
-import { useMix } from "@pranjalg420/usemix";
+import { useMix } from "@pranjalg1122/usemix";
 import { useEffect, useState } from "react";
 import { Roboto_Mono } from "next/font/google";
 import SocialLinks from "../../components/socialLinks";
@@ -20,7 +20,7 @@ export default function Home() {
         "Quick Learner",
         "UI/UX Designer",
         "Tech Guru",
-        "Hacker"
+        "Hacker",
     ];
     const [rolesIndex, setRolesIndex] = useState<number>(0);
 
@@ -62,8 +62,9 @@ export default function Home() {
                         </p>
                         <p className="desktop:text-xl text-base">
                             A web developer from India who loves everything
-                            about programming. Proficient in TypeScript, React, Next.js, Node.js, Express.js. I
-                            also have experience in UI/UX design and graphic design.
+                            about programming. Proficient in TypeScript, React,
+                            Next.js, Node.js, Express.js. I also have experience
+                            in UI/UX design and graphic design.
                         </p>
                     </div>
                 </div>

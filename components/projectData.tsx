@@ -25,8 +25,8 @@ export default [
     {
         id: 2,
         title: "useMix",
-        gitLink: "https://github.com/PranjalG420/usemix",
-        siteLink: "https://www.npmjs.com/package/@pranjalg420/usemix",
+        gitLink: "https://github.com/PranjalG1122/usemix",
+        siteLink: "https://www.npmjs.com/package/@pranjalg1122/usemix",
         text: "useMix is a custom npm package that creates a unique mixing effect, which shuffles characters in a string. It can be modified with user entered parameters. An example of this is on the home page.",
         images: {
             0: "/usemix0.png",
