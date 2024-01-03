@@ -4,16 +4,13 @@ export default function About() {
             <p className="desktop:text-6xl text-3xl mb-4 font-medium">About</p>
             <div className="desktop:text-xl text-lg flex flex-col gap-6">
                 <p>
-                    Hey there! I'm a{" "}
-                    {new Date(Date.now()).getFullYear() -
-                        new Date("04/27/2003").getFullYear()}
-                    -year-old web developer who is passionate about creating
-                    interactive and dynamic web applications. My skills are
-                    focused on Javascript, React, Nextjs, Nodejs, and Express,
-                    which allows me to create robust, scalable, and maintainable
-                    web applications. I have a good understanding of UI/UX
-                    principles, and I strive to create user-friendly experiences
-                    for every project I work on.
+                    Hey there! I'm a young web developer who is passionate about
+                    creating interactive and dynamic web applications. My skills
+                    are focused on Javascript, React, Nextjs, Nodejs, and
+                    Express, which allows me to create robust, scalable, and
+                    maintainable web applications. I have a good understanding
+                    of UI/UX principles, and I strive to create user-friendly
+                    experiences for every project I work on.
                 </p>
                 <p>
                     I've always been fascinated by the power of the internet and
