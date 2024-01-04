@@ -1,4 +1,4 @@
-## This is my personal portfolio website
+## This is my personal portfolio site
 
 Check it out: [pranjalg1122.vercel.app](https://pranjalg1122.vercel.app/)
 
