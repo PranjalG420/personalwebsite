@@ -10,7 +10,7 @@
     },
     "dependencies": {
         "@pranjalg1122/usemix": "^1.0.0",
-        "@prisma/client": "^4.16.2",
+        "@prisma/client": "^5.8.1",
         "@tailwindcss/typography": "^0.5.10",
         "date-fns": "^2.30.0",
         "gray-matter": "^4.0.3",
