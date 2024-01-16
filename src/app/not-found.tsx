@@ -4,7 +4,7 @@ import Navbar from "../../components/navbar";
 
 export default function NotFound() {
     return (
-        <main className="w-full bg-neutral-900 flex flex-col items-center justify-center my-auto">
+        <main className="w-full bg-neutral-950 flex flex-col items-center justify-center my-auto">
             <title>404</title>
             <p className="text-3xl desktop:text-4xl font-medium">
                 404 Not Found
