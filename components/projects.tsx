@@ -4,6 +4,23 @@ import { Link } from "react-feather";
 
 const projects = [
     {
+        key: 0,
+        title: "Xeol",
+        description:
+            "An intuative and responsive microblogging platform which uses user location to display posts from their area. Useful for finding local events, news, and more.",
+        link: "https://xeol.vercel.app",
+        tags: [
+            "React",
+            "Tailwind CSS",
+            "Typescript",
+            "Express",
+            "NodeJs",
+            "PostgreSQL",
+            "Prisma",
+        ],
+        imgSource: "/xeol.png",
+    },
+    {
         key: 1,
         title: "appNote",
         description:
