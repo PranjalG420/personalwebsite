@@ -11,7 +11,7 @@
     "dependencies": {
         "@pranjalg1122/usemix": "^1.0.0",
         "@tailwindcss/typography": "^0.5.13",
-        "next": "^14.1.4",
+        "next": "^14.2.3",
         "react": "18.3.1",
         "react-dom": "18.3.1",
         "react-feather": "^2.0.10"
