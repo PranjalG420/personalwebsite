@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center w-full min-h-screen h-full md:px-0 px-2 gap-4">
+    <main className="flex flex-col items-center w-full min-h-screen h-full py-4 md:px-0 px-2 gap-16">
       <Navbar />
       <HomePageContainer link={"home"}>
         <h1 className="text-4xl font-semibold">Pranjal Gupta</h1>
