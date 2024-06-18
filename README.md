@@ -2,8 +2,8 @@
 
 Check it out [here](https://pranjalg1122.vercel.app/).
 
-#### Built Using
+#### Built With:
 
--   Framework: [Next.js](https://nextjs.org/)
--   Styling: [Tailwind CSS](https://tailwindcss.com/)
--   Deployment: [Vercel](https://vercel.app)
+-   **Framework**: [Next.js](https://nextjs.org/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **Deployment**: [Vercel](https://vercel.app)
