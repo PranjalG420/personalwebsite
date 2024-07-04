@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@media screen and (min-width: 768px) {
-  html {
-    margin-left: calc(100vw - 100%);
-    margin-right: 0;
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -38,11 +31,4 @@ html {
   .grid > *:nth-child(2n-1):nth-last-of-type(1) {
     grid-column: span 2;
   }
-  html {
-    scroll-padding-top: 2rem;
-  }
 }
-
-/* .grid > *:nth-child(3n-2):nth-last-of-type(1) {
-  grid-column: span 3;
-} */
