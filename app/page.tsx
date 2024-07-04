@@ -19,10 +19,11 @@ export default function Home() {
         <div className="flex flex-col gap-2">
           <h1 className="text-4xl font-semibold">Pranjal Gupta</h1>
           <p className="md:text-lg text-base text-neutral-400">
-            A web developer from India who loves everything about programming.
-            Proficient in TypeScript, React, Next.js, Node.js, Express.js. I
-            also have experience in UI/UX design and graphic design.
-          </p>{" "}
+            An experienced web developer from India who loves all things
+            programming. Passionate about crafting intuitive user experiences
+            and exploring cutting-edge web technologies. I also dabble in UI/UX
+            graphic design and AI/ML.
+          </p>
         </div>
       </div>
       <div className="grid w-full grid-cols-2 gap-1">

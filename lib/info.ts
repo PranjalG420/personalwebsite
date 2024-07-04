@@ -21,8 +21,8 @@ export const homePageSocials = [
     link: "/resume.pdf",
   },
   {
-    text: "Blog",
-    link: "https://pranjalg1122blog.vercel.app",
+    text: "Figma",
+    link: "https://www.figma.com/@pranjalg1122",
   },
 ];
 
