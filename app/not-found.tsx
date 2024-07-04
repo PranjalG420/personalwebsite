@@ -8,7 +8,7 @@ export default function NotFound() {
       <p className="md:text-lg text-base text-neutral-400">
         That page does not exist. 
       </p>
-      <Link href="/" className={variants({ variant: "primary" }) + " w-fit"}>
+      <Link href="/" className={variants({ variant: "primary" }) + " max-w-fit"}>
         Home
       </Link>
     </main>
