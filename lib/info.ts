@@ -166,5 +166,5 @@ export const projects = [
     title: "SwiftSongs",
     text: "A custom-built music player for the web, with features such as looping, shuffling, and more.",
     link: "swiftsongs.vercel.app",
-  }
+  },
 ];
