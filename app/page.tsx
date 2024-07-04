@@ -2,6 +2,7 @@ import { variants } from "@/components/Button";
 import HomePageContainer from "@/components/HomePageContainer";
 import Navbar from "@/components/Navbar";
 import { homePageSocials, projects, skills } from "@/lib/info";
+
 import Link from "next/link";
 
 export default function Home() {
@@ -9,12 +10,21 @@ export default function Home() {
     <main className="flex flex-col items-center w-full min-h-screen h-full py-4 md:px-0 px-2 gap-16">
       <Navbar />
       <HomePageContainer link={"home"}>
-        <h1 className="text-4xl font-semibold">Pranjal Gupta</h1>
-        <p className="md:text-lg text-base text-neutral-400">
-          A web developer from India who loves everything about programming.
-          Proficient in TypeScript, React, Next.js, Node.js, Express.js. I also
-          have experience in UI/UX design and graphic design.
-        </p>
+        <div className="flex lg:flex-row flex-col gap-4">
+          <img
+            src="https://avatars.githubusercontent.com/u/95481637?s=400&u=aad1c66019e33b82661f9aaa29291ed25b0e3e79&v=4"
+            alt="logo"
+            className="rounded-lg w-full lg:max-w-40 max-w-24 lg:h-40 h-24"
+          />
+          <div className="flex flex-col gap-2">
+            <h1 className="text-4xl font-semibold">Pranjal Gupta</h1>
+            <p className="md:text-lg text-base text-neutral-400">
+              A web developer from India who loves everything about programming.
+              Proficient in TypeScript, React, Next.js, Node.js, Express.js. I
+              also have experience in UI/UX design and graphic design.
+            </p>{" "}
+          </div>
+        </div>
         <div className="grid w-full grid-cols-2 gap-1">
           {homePageSocials.map((social, i) => {
             return (
@@ -64,7 +74,9 @@ export default function Home() {
               <div key={i} className="flex flex-col w-full gap-1">
                 <p className="font-medium">
                   {project.title} {"->"}{" "}
-                  <span className="font-regular text-neutral-400">{project.text}</span>
+                  <span className="font-regular text-neutral-400">
+                    {project.text}
+                  </span>
                 </p>
                 <Link
                   href={"https://" + project.link}
