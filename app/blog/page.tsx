@@ -14,7 +14,7 @@ export default async function Blog() {
   return (
     <Container>
       <h1 className="md:text-4xl text-2xl font-semibold">Blogs</h1>
-      <ul className="flex flex-col items-center gap-8 flex-1">
+      <ul className="flex flex-col items-center gap-4 flex-1">
         {blogFrontMatter.map((blog, i) => {
           return (
             <li key={i} className="flex flex-col items-start gap-1 w-full">
