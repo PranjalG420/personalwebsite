@@ -3,18 +3,13 @@ import { listBlogs, readBlog } from "@/lib/blog";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 
-export default async function Blog({
-  params,
-}: {
-  params: {
-    blogId: string;
-  };
-}) {
+export default async function Blog({ params }: any) {
+  const { blogId } = await params;
   const blogs = await listBlogs();
-  const isBlog = blogs.includes(params.blogId);
+  const isBlog = blogs.includes(blogId);
   if (!isBlog) return notFound();
 
-  const markdown = await readBlog(params.blogId);
+  const markdown = await readBlog(blogId);
 
   return (
     <Container>
