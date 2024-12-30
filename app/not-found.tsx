@@ -1,22 +1,19 @@
 import { variants } from "@/components/Button";
-import Container from "@/components/Container";
+import Navbar from "@/components/Navbar";
+import { roboto } from "@/lib/font";
 import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <Container>
-      <div className="w-full flex flex-col items-center gap-2">
-        <h1 className="text-4xl font-semibold">404</h1>
-        <p className="md:text-lg text-base text-neutral-400">
-          That page does not exist.
-        </p>
-        <Link
-          href="/"
-          className={variants({ variant: "primary" }) + " max-w-fit"}
-        >
-          Home
-        </Link>
-      </div>
-    </Container>
+    <main className="flex flex-col items-center justify-center w-full h-screen md:gap-8 gap-4 px-4">
+      <Navbar />
+      <h1 className={roboto.className + " text-sky-300 md:text-9xl text-4xl"}>
+        404
+      </h1>
+      <h1 className="md:text-4xl text-2xl font-semibold">Page Not Found</h1>
+      <Link href="/" className={variants({ variant: "primary" }) + " mx-auto"}>
+        Take me back!
+      </Link>
+    </main>
   );
 }

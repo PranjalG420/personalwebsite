@@ -1,8 +1,8 @@
 "use server";
 
 import { serialize } from "next-mdx-remote/serialize";
-import fs from "node:fs/promises";
-import path from "node:path";
+import fs from "fs/promises";
+import path from "path";
 
 export async function listBlogs(): Promise<string[]> {
   return fs
@@ -17,13 +17,9 @@ export async function readBlog(blogId: string) {
       return {
         source: blog,
         frontMatter: (
-          await serialize<
-            Record<string, any>,
-            Record<
-              string,
-              string
-            >
-          >(blog, { parseFrontmatter: true })
+          await serialize<Record<string, any>, Record<string, string>>(blog, {
+            parseFrontmatter: true,
+          })
         ).frontmatter,
       };
     });

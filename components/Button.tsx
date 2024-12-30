@@ -6,8 +6,9 @@ export const variants = cva("", {
   variants: {
     variant: {
       primary:
-        "md:px-16 px-4 py-2 w-full text-center bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-sm md:text-base text-sm font-medium",
-      navbarLink: "hover:text-neutral-300 md:text-base text-sm",
+        "w-fit px-8 py-2 rounded border border-sky-300 text-sky-300 hover:bg-sky-950 md:text-base text-sm transition-colors",
+      navbarLink: "hover:text-sky-300 md:text-base text-sm transition-colors",
+      icon: "hover:text-sky-300 md:text-2xl text-lg",
     },
   },
   defaultVariants: {

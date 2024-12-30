@@ -1,36 +1,31 @@
-import Container from "@/components/Container";
-import { listBlogs, readBlog } from "@/lib/blog";
-import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import SearchAndBlogs from "@/components/SearchAndBlogs";
+import { roboto } from "@/lib/font";
+import getBlogs from "@/server/getBlogs";
+
 
 export default async function Blog() {
-  const blogs = await listBlogs();
-
-  const blogFrontMatter = await Promise.all(
-    blogs.map(
-      async (blog) => await readBlog(blog).then((blog) => blog.frontMatter)
-    )
-  );
+  const { blogs, blogFrontMatter } = await getBlogs();
 
   return (
-    <Container>
-      <h1 className="md:text-4xl text-2xl font-semibold">Blogs</h1>
-      <ul className="flex flex-col items-center gap-4 flex-1">
-        {blogFrontMatter.map((blog, i) => {
-          return (
-            <li key={i} className="flex flex-col items-start gap-1 w-full">
-              <Link
-                href={"/blog/" + blogs[i]}
-                className="hover:underline md:text-lg"
-              >
-                {blog.title}
-              </Link>
-              <p className="text-neutral-400 md:text-base text-sm">
-                {blog.date}
-              </p>
-            </li>
-          );
-        })}
-      </ul>
-    </Container>
+    <main className="flex flex-col items-start justify-center w-full max-w-3xl mx-auto px-4 h-full py-16 md:gap-8 gap-4 md-4">
+      <Navbar />
+      <h1
+        className={
+          roboto.className +
+          " text-sky-300 md:text-base text-sm animate-fadeLeft300"
+        }
+      >
+        Sharing ideas and insights
+      </h1>
+      <h1 className="md:text-4xl text-2xl font-semibold animate-fadeLeft500">
+        Blogs
+      </h1>
+      {blogs && blogFrontMatter && (
+        <SearchAndBlogs blogs={blogs} blogFrontMatter={blogFrontMatter} />
+      )}
+    </main>
   );
 }
+
+
