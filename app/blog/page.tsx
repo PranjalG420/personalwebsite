@@ -8,7 +8,7 @@ export default async function Blog() {
   const { blogs, blogFrontMatter } = await getBlogs();
 
   return (
-    <main className="flex flex-col items-start justify-center w-full max-w-3xl mx-auto px-4 h-full py-16 md:gap-8 gap-4 md-4">
+    <main className="flex flex-col items-start justify-center w-full max-w-3xl mx-auto px-4 min-h-screen h-full py-16 md:gap-8 gap-4 md-4">
       <Navbar />
       <h1
         className={
