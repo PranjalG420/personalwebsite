@@ -30,8 +30,8 @@ export default function MainSection() {
       <p className="w-full max-w-xl md:text-base text-sm text-justify text-sky-200 text-opacity-75 animate-fade700">
         I'm a full-stack web developer and software engineer who loves creating
         accessible, user-focused web apps that truly shine{" "}
-        <span className="text-opacity-100 text-white"></span>. Passionate about
-        exploring cutting-edge tech and crafting experiences that leave a
+        <span className="text-opacity-100 text-white">✨</span>. Passionate
+        about exploring cutting-edge tech and crafting experiences that leave a
         lasting impression!
       </p>
       <Link
